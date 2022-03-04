@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 2029427084342931755}
   - component: {fileID: 2029427084342931756}
   - component: {fileID: 2029427084342931757}
+  - component: {fileID: 2091460557}
+  - component: {fileID: 2091460558}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -218,3 +220,63 @@ MonoBehaviour:
     m_Flags: 0
   _playerTransform: {fileID: 2029427084342931754}
   _cameraTransform: {fileID: 2029427083074685610}
+--- !u!114 &2091460557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029427084342931735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db30432cc8c60a340b8df6994840543e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingTool: {fileID: 11400000, guid: 341794e137b89184e9fc1191096e791e, type: 2}
+  _useAction:
+    m_Name: Use
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: daf27598-0689-4089-8024-5a1ac4bbcf7e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 45f722dd-d3bc-4dcf-b07b-4269760b19c7
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Use
+      m_Flags: 0
+    m_Flags: 0
+--- !u!114 &2091460558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029427084342931735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da878603070d2d44490587465e1e0e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerCamera: {fileID: 2029427083074685609}
+  _interactAction:
+    m_Name: Interact
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 83762f86-0f93-4e22-a447-16964ec2d71a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b71e69a3-5e4e-4e2f-85ff-049e4be81421
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
+      m_Flags: 0
+    m_Flags: 0
