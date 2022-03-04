@@ -1,30 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed = 5f;
+    [SerializeField] private float _gravity = 9.81f;
+    [SerializeField] [FoldoutGroup("Setup")]
+    private CharacterController _controller;
     
-    private float _hAxis;
-    private float _vAxis;
-    private Rigidbody _rb;
+    private Inputs_Mapping _inputs;
+    
+    private Vector2 _inputMovement;
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        _inputs = new Inputs_Mapping();
+        _inputs.Enable();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        _hAxis = Input.GetAxisRaw("Horizontal");
-        _vAxis = Input.GetAxisRaw("Vertical");
-    }
-
-    private void FixedUpdate()
-    {
-        Vector3 translation = new Vector3(_hAxis, 0, _vAxis) * _movementSpeed * Time.fixedDeltaTime;
-        _rb.MovePosition(_rb.position + translation);
+        _inputMovement = _inputs.Main.Move.ReadValue<Vector2>();
+        Vector3 translationDirection = transform.forward*_inputMovement.y + transform.right*_inputMovement.x;
+        translationDirection.y = -_gravity;
+        Vector3 translation = translationDirection * _movementSpeed;
+        _controller.SimpleMove(translation);
     }
 }
