@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.IsGamePaused)
+            return;
+        
         _inputMovement = _inputs.Main.Move.ReadValue<Vector2>();
         Vector3 translationDirection = transform.forward*_inputMovement.y + transform.right*_inputMovement.x;
         translationDirection.y = -_gravity;

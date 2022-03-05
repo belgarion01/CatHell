@@ -15,22 +15,40 @@ public class CameraLooker : MonoBehaviour
     [SerializeField] [FoldoutGroup("Setup")]
     private Transform _cameraTransform;
 
+    
+    
     private float x;
 
     void Start()
     {
         _lookBinding.Enable();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        DisableCursor();
+        
+        GameManager.Instance.OnGameOver.AddListener(EnableCursor);
     }
     void Update()
     {
+        if (GameManager.Instance.IsGamePaused)
+            return;
+        
         Vector2 mouseDelta = _lookBinding.ReadValue<Vector2>() * _mouseSensibility;
         _playerTransform.Rotate(Vector3.up, mouseDelta.x);
 
         x -= mouseDelta.y;
         float cameraAngle = Mathf.Clamp(x, -85, 85);
         _cameraTransform.localRotation = Quaternion.Euler(new Vector3(cameraAngle, 0, 0));
+    }
+
+    private void EnableCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    private void DisableCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

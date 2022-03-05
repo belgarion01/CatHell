@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,7 +21,10 @@ public class GameManager : MonoBehaviour
     
     private float _tickTimer = 0f;
 
+    private bool _isGamePaused = false;
+
     public float MaxChaosGauge => _maxChaosGauge;
+    public bool IsGamePaused => _isGamePaused;
     public UnityEvent<float> OnChaosChanged;
     public UnityEvent OnGameOver;
 
@@ -89,6 +93,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        _isGamePaused = true;
         OnGameOver?.Invoke();
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
