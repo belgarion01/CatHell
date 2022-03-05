@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2564464740060401195}
   - component: {fileID: 730248576058667104}
   - component: {fileID: 7515890683134485557}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 7615760336474048562}
   - component: {fileID: 1382880770592342832}
   - component: {fileID: 310948847629690100}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9635,7 +9635,7 @@ GameObject:
   - component: {fileID: 8663205712711673959}
   - component: {fileID: 8372699186937450745}
   - component: {fileID: 7460385592194024173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14449,7 +14449,7 @@ GameObject:
   - component: {fileID: 8994261053480184932}
   - component: {fileID: 8917737510126498655}
   - component: {fileID: 9073321655480212564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: M_HairPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14558,7 +14558,7 @@ GameObject:
   - component: {fileID: 6310550875158860904}
   - component: {fileID: 6277432214866009170}
   - component: {fileID: 6868707916212502115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19370,7 +19370,7 @@ GameObject:
   - component: {fileID: 8569370028651246535}
   - component: {fileID: 2439203418478428462}
   - component: {fileID: 9153576941701951830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
