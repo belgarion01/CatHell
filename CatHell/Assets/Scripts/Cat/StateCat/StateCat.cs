@@ -9,6 +9,7 @@ public  class StateCat : MonoBehaviour
 public StateCat NextState;
 public StateCatEnum StateCatEnum;
 public StateCat MutationState;
+
 private void OnValidate()
 {
  if(_cat == null)

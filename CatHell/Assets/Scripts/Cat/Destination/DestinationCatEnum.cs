@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StateCatEnum 
+public enum DestinationCatEnum
 {
- Move, Idle, Patrol, Sofa, CatTree, Sick
+    Sofa1, Sofa2, CatTree
 }

@@ -1,15 +1,28 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class StateCatMoveToPoint :  StateCat
 {
     [SerializeField]
     private List<StateCatDestination> _stateCatDestinationList;
 
+    
     private Vector3 _destination;
     private StateCat _stateCatDest;
+
+    private void Start()
+    {
+        foreach (StateCatDestination stateCatDestination in _stateCatDestinationList)
+        {
+            stateCatDestination.destination =
+                DestinationCat.instance.destinationCatClassDic[stateCatDestination.destinationCatEnum];
+        }
+    }
+
     public override void ToMutation()
     {
         base.ToMutation();

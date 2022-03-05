@@ -19,7 +19,6 @@ public class MutationCat : MonoBehaviour
         {
             return _currentMutation;
         }
-
         set
         {
             float oldMutation = _currentMutation;
@@ -28,7 +27,11 @@ public class MutationCat : MonoBehaviour
             {
                 _cat.Animator.runtimeAnimatorController = MutateCat.Animator.runtimeAnimatorController;
                 _cat.MeshFilter.mesh = MutateCat.MeshFilter.mesh;
-                
+                _cat.OffsetCat = MutateCat.OffsetCat;
+                _cat.mutationShootFailure = MutateCat.mutationShootFailure;
+                _cat.ShootSuccessEvent = MutateCat.ShootSuccessEvent;
+                _cat.ShootFailureEvent = MutateCat.ShootFailureEvent;
+
                 foreach (var stateCat in _cat.Machine.StateCatList) { stateCat.ToMutation(); }
                 
                 for (int i = 0; i < MutateStateAddList.Count; i++)
