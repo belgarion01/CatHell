@@ -1,32 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class StateCatWait : StateCat
 
 {[SerializeField]
-    private float _timePatrol;
-    private float _timerPatrol;
+    private float _timeWait;
+    private float _timerWait;
     [SerializeField]
-    private StateCat _endWaitState;
+    [HideIf("_hideEndWaitState")]
+    protected StateCat _endWaitState;
+
+    private bool _hideEndWaitState => GetType() == typeof(StateCatIdle) ; 
     public override void ToMutation()
     {
         base.ToMutation();
         StateCatWait mutationStateType = (StateCatWait) MutationState;
-        _timePatrol = mutationStateType._timePatrol;
+        _timeWait = mutationStateType._timeWait;
         _endWaitState = mutationStateType._endWaitState;
         
     }
 
+    
     public override void StartState()
     {
-        _timerPatrol = 0;
+        _timerWait = 0;
     }
 
     public override void UpdateState()
     {
-        if (_timerPatrol < _timePatrol)
-            _timerPatrol += Time.deltaTime;
+        if (_timerWait < _timeWait)
+        {
+            _timerWait += Time.deltaTime;
+        }
+            
         else
         {
             EndWait();

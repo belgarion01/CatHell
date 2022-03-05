@@ -67,15 +67,18 @@ public class MachineCat : MonoBehaviour
    
    private void Start()
    {
-      
+      CurrentStateCat = StateCatList[0];
+      Debug.Log("test");
    }
    private void Update()
    {
       if (CurrentStateCat.NextState != null)
       {
          _isStartCurrentStateCat = true;
-         CurrentStateCat.NextState = null;
+         StateCat oldStateCat = CurrentStateCat;
          CurrentStateCat = CurrentStateCat.NextState;
+         oldStateCat.NextState = null;
+         
       }
       
       if (_isStartCurrentStateCat)

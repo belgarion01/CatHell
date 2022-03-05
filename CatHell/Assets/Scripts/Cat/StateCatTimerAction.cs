@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StateCatTimerAction : StateCatWait
 {
-   [SerializeField]
-   private StateCat _endWaitState;
+   
 
+   
    public override void ToMutation()
    {
       base.ToMutation();
@@ -14,13 +14,9 @@ public class StateCatTimerAction : StateCatWait
       _endWaitState = mutationType._endWaitState;
    }
 
-   public override void UpdateState()
-   {
-      base.UpdateState();
-   }
-   
    public override void EndWait()
    {
+      
       _machineCat.CurrentMutation++;
       NextState = _endWaitState;
 

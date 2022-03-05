@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class StateCatPatrol : StateCat
@@ -45,13 +46,16 @@ public class StateCatPatrol : StateCat
 
  void GenerateDestination()
   {
-    Vector2 dir = Random.insideUnitCircle.normalized;
-   float length =  Random.Range(_minLength, _maxLength);
-   _machineCat.Agent.SetDestination(_machineCat.transform.position+new Vector3(dir.x, _machineCat.transform.position.y, dir.y)*length);
+    Vector2 _dir = Random.insideUnitCircle.normalized;
+   float _length =  Random.Range(_minLength, _maxLength);
+   NavMeshHit _hit;
+   NavMesh.SamplePosition(_machineCat.transform.position + new Vector3(_dir.x, _machineCat.transform.position.y, _dir.y),
+       out _hit, _length, 1);
+   _machineCat.Agent.SetDestination(_hit.position);
   }
  public override void UpdateState()
   {
-    if (Vector3.Distance(_machineCat.transform.position, _machineCat.Agent.destination)<0.3f)
+    if (Vector3.Distance(_machineCat.transform.position, _machineCat.Agent.destination)<_machineCat.Agent.radius)
     {
       GenerateDestination();
     }
@@ -66,10 +70,10 @@ public class StateCatPatrol : StateCat
 
  public virtual void EndPatrol()
  {
-     float rand = Random.Range(0, 100);
+     float _rand = Random.Range(0, 100);
      for (int i = 0; i < _stateCatProbabilitiesList.Count; i++)
      {
-         if (_stateCatProbabilitiesList[i].CheckFloatInProbability(rand))
+         if (_stateCatProbabilitiesList[i].CheckFloatInProbability(_rand))
              NextState = _stateCatProbabilitiesList[i].stateCat;
      }
  }
