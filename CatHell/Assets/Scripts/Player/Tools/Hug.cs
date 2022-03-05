@@ -31,6 +31,8 @@ public class Hug : Tool
                 _targetHugable = hugable;
             }
         }
+        
+        _hugObject.Animator.SetBool("On", _targetHugable != null);
     }
 
     public override void OnUseUp(GameObject player)
@@ -42,7 +44,7 @@ public class Hug : Tool
     {
         if (_hugObject == null)
         {
-            _hugObject = player.GetComponentInChildren<HugObject>();
+            _hugObject = player.GetComponentInChildren<HugObject>(true);
         }
 
         if (_camera == null)

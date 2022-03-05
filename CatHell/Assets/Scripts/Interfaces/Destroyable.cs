@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Destroyable : MonoBehaviour, IDestroyable, IInteractable, IVacuumable
+public class Destroyable : MonoBehaviour, IDestroyable, IInteractable, IVacuumable, IHugable
 {
     public void DestroyObject()
     {
@@ -17,5 +17,10 @@ public class Destroyable : MonoBehaviour, IDestroyable, IInteractable, IVacuumab
     public void OnVacuumed()
     {
         DestroyObject();
+    }
+
+    public void Hug(GameObject huger)
+    {
+        
     }
 }

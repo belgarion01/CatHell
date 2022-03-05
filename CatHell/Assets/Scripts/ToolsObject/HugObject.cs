@@ -6,6 +6,7 @@ using UnityEngine;
 public class HugObject : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
+    public Animator Animator;
 
     private void Update()
     {
