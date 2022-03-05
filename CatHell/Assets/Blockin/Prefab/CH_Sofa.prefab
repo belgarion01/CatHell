@@ -15,8 +15,8 @@ GameObject:
   m_Name: ChamferBox002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7301602184094690886
 Transform:
@@ -98,8 +98,8 @@ GameObject:
   m_Name: ChamferBox004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2884496210575026580
 Transform:
@@ -181,8 +181,8 @@ GameObject:
   m_Name: Cylinder004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7599792843885792712
 Transform:
@@ -263,7 +263,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3427985227120637608
 Transform:
@@ -272,7 +272,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2655284066466638866}
-  m_LocalRotation: {x: -0, y: 0.6532819, z: -0, w: 0.75711477}
+  m_LocalRotation: {x: 0, y: 0.65328187, z: 0, w: 0.7571148}
   m_LocalPosition: {x: -6.6493793, y: 1.07, z: 9.365493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -305,8 +305,8 @@ GameObject:
   m_Name: ChamferBox003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2367182149883414833
 Transform:
@@ -388,8 +388,8 @@ GameObject:
   m_Name: ChamferBox001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9054693625097656169
 Transform:
@@ -471,8 +471,8 @@ GameObject:
   m_Name: ChamferBox005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &159657153072125188
 Transform:
@@ -554,8 +554,8 @@ GameObject:
   m_Name: Cylinder002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4619534946773512570
 Transform:
@@ -637,8 +637,8 @@ GameObject:
   m_Name: Cylinder001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8018743643040000839
 Transform:
@@ -720,8 +720,8 @@ GameObject:
   m_Name: Cylinder003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7235780989712918506
 Transform:
@@ -803,8 +803,8 @@ GameObject:
   m_Name: ChamferBox006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7216845803495001825
 Transform:
