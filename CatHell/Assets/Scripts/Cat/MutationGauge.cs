@@ -11,9 +11,6 @@ public class MutationGauge : MonoBehaviour
     [SerializeField] private float _maxAngle;
     [SerializeField] private Color _startColor = Color.green;
     [SerializeField] private Color _endColor = Color.magenta;
-
-    [Range(0f, 1f)]
-    [SerializeField] private float percent = 0f;
     private void Awake()
     {
         _mutationCat.OnMutationChanged.AddListener(OnMutationChanged);

@@ -9,9 +9,12 @@ public class ToolsAnimation : MonoBehaviour
     
     [SerializeField] private Animator _cleanerAnimator;
     [SerializeField] private Animator _medicGunAnimator;
+    [SerializeField] private Animator _hugAnimator;
 
     public Animator CleanerAnimator => _cleanerAnimator;
     public Animator MedicGunAnimator => _medicGunAnimator;
+
+    public Animator HugAnimator => _hugAnimator;
 
     private void Awake()
     {
@@ -23,7 +26,8 @@ public class ToolsAnimation : MonoBehaviour
         List<Animator> toolList = new List<Animator>()
         {
             _cleanerAnimator,
-            _medicGunAnimator
+            _medicGunAnimator,
+            _hugAnimator
         };
 
         for (int i = 0; i < toolList.Count; i++)

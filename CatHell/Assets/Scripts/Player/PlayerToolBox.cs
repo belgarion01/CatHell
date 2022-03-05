@@ -38,11 +38,11 @@ public class PlayerToolBox : MonoBehaviour
     public void ScrollPerformed(InputAction.CallbackContext ctx)
     {
         float scrollValue = ctx.ReadValue<float>();
-        if (scrollValue > 0)
+        if (scrollValue < 0)
         {
             SelectNextTool();
         }
-        else if (scrollValue < 0)
+        else if (scrollValue > 0)
         {
             SelectPreviousTool();
         }
