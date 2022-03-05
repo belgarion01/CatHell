@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MutationCat : MonoBehaviour
 {
     private Cat _cat;
     public bool IsMutated => MutateCat != null;
-    [SerializeField] int _maxMutation;
-    private int _currentMutation;
+    [SerializeField] float _maxMutation;
+    private float _currentMutation;
     public List<StateCat> MutateStateAddList;
     public Cat MutateCat;
-    public int CurrentMutation
+    public float MutationPercentage => Mathf.InverseLerp(0f, _maxMutation, _currentMutation);
+    public float CurrentMutation
     {
         get
         {
@@ -20,6 +22,7 @@ public class MutationCat : MonoBehaviour
 
         set
         {
+            float oldMutation = _currentMutation;
             _currentMutation = value;
             if (_currentMutation == _maxMutation)
             {
@@ -36,11 +39,16 @@ public class MutationCat : MonoBehaviour
                     stateCat.MutationState = MutateStateAddList[i].MutationState;
                 }
                 _cat.Machine.StateCatList.AddRange(MutateStateAddList);
-            
+            }
 
+            if (!oldMutation.Equals(_currentMutation))
+            {
+                OnMutationChanged?.Invoke(MutationPercentage);
             }
         }
     }
+
+    public UnityEvent<float> OnMutationChanged;
 
     private void OnValidate()
     {
