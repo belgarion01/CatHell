@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
     
     [SerializeField] private float _chaosByCat = 0.5f;
     [SerializeField] private float _timeBetweenTicks = 1f;
+
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _defaultMusic;
+    [SerializeField] private AudioClip _discoMusic;
     
     private List<Cat> _catsInHouse = new List<Cat>();
 
@@ -27,6 +31,7 @@ public class GameManager : MonoBehaviour
     public bool IsGamePaused => _isGamePaused;
     public UnityEvent<float> OnChaosChanged;
     public UnityEvent OnGameOver;
+    public UnityEvent<bool> OnDiscoChanged;
 
     void Awake()
     {
@@ -105,5 +110,13 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void SetDiscoEnabled(bool enable)
+    {
+        _audioSource.clip = enable ? _discoMusic : _defaultMusic;
+        _audioSource.Play();
+        
+        OnDiscoChanged?.Invoke(enable);
     }
 }
