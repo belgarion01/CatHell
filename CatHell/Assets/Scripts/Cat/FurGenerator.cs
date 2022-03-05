@@ -16,12 +16,13 @@ public class FurGenerator : MonoBehaviour
 
         if (_tickTimer >= _timeBetweenGeneration)
         {
-            GenerateFur();    
+            GenerateFur();
+            _tickTimer = 0f;
         }
     }
 
     private void GenerateFur()
     {
-        Instantiate(_furPrefab, transform.position, Quaternion.identity);
+        Instantiate(_furPrefab, transform.position, _furPrefab.transform.rotation);
     }
 }
