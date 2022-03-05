@@ -10,4 +10,5 @@ public abstract class Tool : ScriptableObject
     public abstract void OnUseDown(GameObject player);
     public abstract void OnTick(GameObject player);
     public abstract void OnUseUp(GameObject player);
+    public abstract void OnEquip(GameObject player);
 }

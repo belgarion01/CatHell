@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroyable : MonoBehaviour, IDestroyable, IInteractable
+public class Destroyable : MonoBehaviour, IDestroyable, IInteractable, IVacuumable
 {
     public void DestroyObject()
     {
@@ -11,8 +11,12 @@ public class Destroyable : MonoBehaviour, IDestroyable, IInteractable
 
     public void Interact(GameObject user)
     {
-        Destroy(gameObject);
+        DestroyObject();
     }
 
     public string ActionName => "Destroy Sphere";
+    public void OnVacuumed()
+    {
+        DestroyObject();
+    }
 }

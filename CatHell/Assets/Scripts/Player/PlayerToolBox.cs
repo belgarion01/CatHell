@@ -81,12 +81,15 @@ public class PlayerToolBox : MonoBehaviour
             }
         }
         
+        CurrentTool.OnEquip(gameObject);
         OnToolSelected?.Invoke(CurrentToolIndex);
     }
 
     public void SelectTool(int toolIndex)
     {
         CurrentToolIndex = toolIndex;
+        
+        CurrentTool.OnEquip(gameObject);
         OnToolSelected?.Invoke(CurrentToolIndex);
     }
 }

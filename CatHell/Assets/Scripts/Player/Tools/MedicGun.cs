@@ -19,4 +19,9 @@ public class MedicGun : Tool
     {
         
     }
+
+    public override void OnEquip(GameObject player)
+    {
+        
+    }
 }

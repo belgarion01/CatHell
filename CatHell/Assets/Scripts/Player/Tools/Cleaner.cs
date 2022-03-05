@@ -5,30 +5,49 @@ using UnityEngine;
 [CreateAssetMenu(menuName = MENU_PATH + "Cleaner")]
 public class Cleaner : Tool
 {
+    private CleanerObject _cleaner;
     private bool _active = false;
     
     public override void OnUseDown(GameObject player)
     {
         _active = true;
+        var toolsAnimation = player.GetComponentInChildren<ToolsAnimation>();
+        if (toolsAnimation != null)
+        {
+            toolsAnimation.CleanerAnimator.SetBool("On", true);
+        }
     }
 
     public override void OnTick(GameObject player)
     {
         if (!_active) return;
-
-        Vector3 cameraPosition = Camera.main.transform.position;
-        RaycastHit hit;
-        if (Physics.Raycast(cameraPosition, Camera.main.transform.forward, out hit))
+        
+        var colliders = Physics.OverlapSphere(_cleaner.VacuumOrigin.position, 1);
+        foreach (Collider collider in colliders)
         {
-            if (hit.transform.TryGetComponent(out IDestroyable destroyable))
+            if (collider.transform.TryGetComponent(out IVacuumable vacuumable))
             {
-                destroyable.DestroyObject();
+                vacuumable.OnVacuumed();
             }
-        } 
+        }
     }
 
     public override void OnUseUp(GameObject player)
     {
         _active = false;
+        
+        var toolsAnimation = player.GetComponentInChildren<ToolsAnimation>();
+        if (toolsAnimation != null)
+        {
+            toolsAnimation.CleanerAnimator.SetBool("On", false);
+        }
+    }
+
+    public override void OnEquip(GameObject player)
+    {
+        if (_cleaner == null)
+        {
+            _cleaner = player.GetComponentInChildren<CleanerObject>();
+        }
     }
 }
