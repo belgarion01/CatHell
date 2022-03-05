@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bcbad4c71c3bed41b488ff3151fef48, type: 3}
-  m_Name: Tool_Cleaner
+  m_Script: {fileID: 11500000, guid: e1811fcc51daa0f4999f44ce13f6b2b8, type: 3}
+  m_Name: Tool_MedicGun
   m_EditorClassIdentifier: 
+  Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
