@@ -51,7 +51,6 @@ MonoBehaviour:
   _maxAngle: 300
   _startColor: {r: 0, g: 1, b: 0, a: 1}
   _endColor: {r: 1, g: 0, b: 1, a: 1}
-  percent: 0
 --- !u!1 &2577638990683511613
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +78,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2577638990683511613}
   m_LocalRotation: {x: -0.7071064, y: -0, z: -0, w: 0.7071072}
-  m_LocalPosition: {x: 0, y: 0.83, z: 8.06}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -120,9 +119,9 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 0
   angRadiansEnd: 5.2359877
-  radius: 1
+  radius: 0.8
   radiusSpace: 0
-  thickness: 0.3
+  thickness: 0.2
   thicknessSpace: 0
   arcEndCaps: 1
   matchDashSpacingToSize: 1
@@ -212,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2577638991169579092}
   m_LocalRotation: {x: -0.7071064, y: -0, z: -0, w: 0.7071072}
-  m_LocalPosition: {x: 0, y: 0.83, z: 8.06}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -253,9 +252,9 @@ MonoBehaviour:
   angUnitInput: 1
   angRadiansStart: 0
   angRadiansEnd: 5.2359877
-  radius: 1
+  radius: 0.8
   radiusSpace: 0
-  thickness: 0.4
+  thickness: 0.3
   thicknessSpace: 0
   arcEndCaps: 1
   matchDashSpacingToSize: 1
