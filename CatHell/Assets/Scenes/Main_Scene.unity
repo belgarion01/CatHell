@@ -4568,7 +4568,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1868021920}
-  - {fileID: 1675575420}
   m_Father: {fileID: 294783987}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9848,298 +9847,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1654762368}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1675575419
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1675575420}
-  - component: {fileID: 1675575431}
-  - component: {fileID: 1675575430}
-  - component: {fileID: 1675575429}
-  - component: {fileID: 1675575428}
-  - component: {fileID: 1675575427}
-  - component: {fileID: 1675575426}
-  - component: {fileID: 1675575425}
-  - component: {fileID: 1675575424}
-  - component: {fileID: 1675575423}
-  - component: {fileID: 1675575422}
-  - component: {fileID: 1675575421}
-  m_Layer: 0
-  m_Name: MutantCatTemplate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1675575420
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 777932901}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1675575421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65816d3f961184f4e882fbda11cb6ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1675575426}
-  NextState: {fileID: 0}
-  StateCatEnum: 0
-  MutationState: {fileID: 0}
-  _timeWait: 3
-  _endWaitState: {fileID: 1675575425}
---- !u!114 &1675575422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65816d3f961184f4e882fbda11cb6ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1675575426}
-  NextState: {fileID: 0}
-  StateCatEnum: 0
-  MutationState: {fileID: 0}
-  _timeWait: 3
-  _endWaitState: {fileID: 1675575425}
---- !u!114 &1675575423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6d99a861133a3f45b2bd5a7905a75ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1675575426}
-  NextState: {fileID: 0}
-  StateCatEnum: 0
-  MutationState: {fileID: 0}
-  _angularSpeed: 60
-  _speed: 1.75
-  _minLength: 5
-  _maxLength: 10
-  _timePatrol: 5
-  _stateCatProbabilitiesList:
-  - minProbability: 0
-    maxProbability: 40
-    stateCat: {fileID: 1675575424}
-  - minProbability: 81
-    maxProbability: 100
-    stateCat: {fileID: 1675575425}
---- !u!114 &1675575424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c3f6d320d3a05499562539b18e22ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1675575426}
-  NextState: {fileID: 0}
-  StateCatEnum: 0
-  MutationState: {fileID: 0}
-  _stateCatDestinationList:
-  - minProbability: 0
-    maxProbability: 20
-    stateCat: {fileID: 1675575422}
-    destination: {fileID: 857634913}
-  - minProbability: 21
-    maxProbability: 50
-    stateCat: {fileID: 1675575422}
-    destination: {fileID: 679296673}
-  - minProbability: 50
-    maxProbability: 100
-    stateCat: {fileID: 1675575421}
-    destination: {fileID: 1337002807}
-  _angularSpeed: 120
-  _speed: 3.5
---- !u!114 &1675575425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f36dcae2d20d6c4e9d1006dbceb54e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1675575426}
-  NextState: {fileID: 0}
-  StateCatEnum: 0
-  MutationState: {fileID: 0}
-  _timeWait: 2
-  _endWaitState: {fileID: 0}
-  _stateCatProbabilitiesList:
-  - minProbability: 0
-    maxProbability: 40
-    stateCat: {fileID: 1675575424}
-  - minProbability: 81
-    maxProbability: 100
-    stateCat: {fileID: 1675575423}
---- !u!114 &1675575426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 352bce5352a5e764787a823e9c769cfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Agent: {fileID: 1675575428}
-  StateCatList:
-  - {fileID: 1675575425}
-  - {fileID: 1675575424}
-  - {fileID: 1675575423}
-  - {fileID: 1675575422}
-  - {fileID: 1675575421}
-  CurrentStateCat: {fileID: 0}
-  _maxMutation: 129
-  MutateStateAddList: []
-  Animator: {fileID: 1675575427}
-  MeshFilter: {fileID: 1675575431}
-  MutateMachineCat: {fileID: 0}
---- !u!95 &1675575427
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe2e357b1285e9f4e8a5645495cd5ba6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &1675575428
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.99999994
-  m_BaseOffset: 0.49999997
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!65 &1675575429
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1675575430
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1675575431
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675575419}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1683642799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10975,6 +10682,8 @@ GameObject:
   - component: {fileID: 1868021929}
   - component: {fileID: 1868021928}
   - component: {fileID: 1868021927}
+  - component: {fileID: 1868021933}
+  - component: {fileID: 1868021932}
   - component: {fileID: 1868021926}
   - component: {fileID: 1868021925}
   - component: {fileID: 1868021924}
@@ -11015,7 +10724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65816d3f961184f4e882fbda11cb6ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1868021926}
+  _cat: {fileID: 1868021933}
   NextState: {fileID: 0}
   StateCatEnum: 0
   MutationState: {fileID: 0}
@@ -11033,7 +10742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65816d3f961184f4e882fbda11cb6ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1868021926}
+  _cat: {fileID: 1868021933}
   NextState: {fileID: 0}
   StateCatEnum: 0
   MutationState: {fileID: 0}
@@ -11051,10 +10760,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d99a861133a3f45b2bd5a7905a75ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1868021926}
+  _cat: {fileID: 1868021933}
   NextState: {fileID: 0}
   StateCatEnum: 0
-  MutationState: {fileID: 1675575425}
+  MutationState: {fileID: 0}
   _angularSpeed: 60
   _speed: 1.75
   _minLength: 5
@@ -11079,7 +10788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c3f6d320d3a05499562539b18e22ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1868021926}
+  _cat: {fileID: 1868021933}
   NextState: {fileID: 0}
   StateCatEnum: 0
   MutationState: {fileID: 0}
@@ -11110,7 +10819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f36dcae2d20d6c4e9d1006dbceb54e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _machineCat: {fileID: 1868021926}
+  _cat: {fileID: 1868021933}
   NextState: {fileID: 0}
   StateCatEnum: 0
   MutationState: {fileID: 0}
@@ -11135,7 +10844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352bce5352a5e764787a823e9c769cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Agent: {fileID: 1868021928}
   StateCatList:
   - {fileID: 1868021925}
   - {fileID: 1868021924}
@@ -11143,11 +10851,6 @@ MonoBehaviour:
   - {fileID: 1868021922}
   - {fileID: 1868021921}
   CurrentStateCat: {fileID: 0}
-  _maxMutation: 129
-  MutateStateAddList: []
-  Animator: {fileID: 1868021927}
-  MeshFilter: {fileID: 1868021931}
-  MutateMachineCat: {fileID: 0}
 --- !u!95 &1868021927
 Animator:
   serializedVersion: 4
@@ -11253,6 +10956,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868021919}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1868021932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868021919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4e5711dd336f648bfc5ce92c6c7cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cat: {fileID: 1868021933}
+  _maxMutation: 32
+  MutateStateAddList: []
+  MutateCat: {fileID: 0}
+--- !u!114 &1868021933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868021919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d952c34f796204796a08a1089dbca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Machine: {fileID: 1868021926}
+  Mutation: {fileID: 1868021932}
+  Animator: {fileID: 1868021927}
+  MeshFilter: {fileID: 1868021931}
+  Agent: {fileID: 1868021928}
 --- !u!1001 &1898569164
 PrefabInstance:
   m_ObjectHideFlags: 0

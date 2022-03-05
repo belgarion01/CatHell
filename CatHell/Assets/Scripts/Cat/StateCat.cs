@@ -7,15 +7,15 @@ public  class StateCat : MonoBehaviour
 {
  
 [ReadOnly] [SerializeField]
- protected MachineCat _machineCat;
+ protected Cat _cat;
 [ReadOnly]
 public StateCat NextState;
 public StateCatEnum StateCatEnum;
 public StateCat MutationState;
 [Button]
-public void SetMachineCat()
+public void SetCat()
 {
- _machineCat = GetComponent<MachineCat>();
+_cat = GetComponent<Cat>();
 }
 virtual public void ToMutation()
 {

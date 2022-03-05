@@ -38,8 +38,8 @@ public class StateCatPatrol : StateCat
 
   public override void StartState()
   {
-    _machineCat.Agent.speed = _speed;
-    _machineCat.Agent.angularSpeed = _angularSpeed;
+    _cat.Agent.speed = _speed;
+        _cat.Agent.angularSpeed = _angularSpeed;
     _timerPatrol = 0; 
   GenerateDestination();
   }
@@ -49,13 +49,13 @@ public class StateCatPatrol : StateCat
     Vector2 _dir = Random.insideUnitCircle.normalized;
    float _length =  Random.Range(_minLength, _maxLength);
    NavMeshHit _hit;
-   NavMesh.SamplePosition(_machineCat.transform.position + new Vector3(_dir.x, _machineCat.transform.position.y, _dir.y),
+   NavMesh.SamplePosition(_cat.transform.position + new Vector3(_dir.x, _cat.transform.position.y, _dir.y),
        out _hit, _length, 1);
-   _machineCat.Agent.SetDestination(_hit.position);
+   _cat.Agent.SetDestination(_hit.position);
   }
  public override void UpdateState()
   {
-    if (Vector3.Distance(_machineCat.transform.position, _machineCat.Agent.destination)<_machineCat.Agent.radius)
+    if (Vector3.Distance(_cat.transform.position, _cat.Agent.destination)<_cat.Agent.radius)
     {
       GenerateDestination();
     }

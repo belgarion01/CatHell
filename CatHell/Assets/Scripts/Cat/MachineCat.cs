@@ -8,47 +8,10 @@ using UnityEngine.AI;
 public class MachineCat : MonoBehaviour
 {
 
-   public NavMeshAgent Agent;
    public List<StateCat> StateCatList;
    [ReadOnly]
    public StateCat CurrentStateCat;
    private bool _isStartCurrentStateCat;
-[SerializeField] int _maxMutation;
-   private int _currentMutation;
-   public List<StateCat> MutateStateAddList;
-   public Animator Animator;
-   public MeshFilter MeshFilter;
-   public MachineCat MutateMachineCat;
-   public int CurrentMutation
-   {
-      get
-      {
-         return _currentMutation;
-      }
-
-      set
-      {
-         _currentMutation = value;
-         if (_currentMutation == _maxMutation)
-         {
-            Animator.runtimeAnimatorController = MutateMachineCat.Animator.runtimeAnimatorController;
-            MeshFilter.mesh = MutateMachineCat.MeshFilter.mesh;
-            StateCatList.AddRange(MutateStateAddList);
-            for (int i = 0; i < MutateStateAddList.Count; i++)
-            {
-              StateCat stateCat = (StateCat) gameObject.AddComponent(MutateStateAddList[i].GetType());
-              stateCat.MutationState = MutateStateAddList[i];
-              stateCat.ToMutation();
-              stateCat.MutationState = MutateStateAddList[i].MutationState;
-            }
-            
-             foreach (var stateCat in StateCatList)
-            {
-               stateCat.ToMutation();
-            }
-         }
-      }
-   }
 
    public void SetState(StateCatEnum stateCatEnum)
    {
@@ -61,10 +24,8 @@ public class MachineCat : MonoBehaviour
             CurrentStateCat = StateCatList[i];
             break;
          }
-      } 
-      
+      }
    }
-   
    private void Start()
    {
       CurrentStateCat = StateCatList[0];
@@ -80,7 +41,6 @@ public class MachineCat : MonoBehaviour
          oldStateCat.NextState = null;
          
       }
-      
       if (_isStartCurrentStateCat)
       {
            CurrentStateCat.StartState();
@@ -90,7 +50,6 @@ public class MachineCat : MonoBehaviour
       {
          CurrentStateCat.UpdateState();
       }
-      
    }
    private void FixedUpdate()
    {

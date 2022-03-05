@@ -38,17 +38,16 @@ public class StateCatMoveToPoint :  StateCat
         }
         NavMesh.SamplePosition(_destination, out _hit, Vector3.Distance(transform.position, _destination), 1 );
         _destination = _hit.position;
-           _machineCat.Agent.SetDestination(_destination);
-        _machineCat.Agent.speed = _speed;
-        _machineCat.Agent.angularSpeed = _angularSpeed;
+           _cat.Agent.SetDestination(_destination);
+        _cat.Agent.speed = _speed;
+        _cat.Agent.angularSpeed = _angularSpeed;
     }
 
     public override void UpdateState()
     {
-       Debug.Log(Vector3.Distance(_machineCat.Agent.transform.position, _destination) );
-        if (Vector3.Distance(transform.position, _destination) <= _machineCat.Agent.radius)
+       Debug.Log(Vector3.Distance(_cat.Agent.transform.position, _destination) );
+        if (Vector3.Distance(transform.position, _destination) <= _cat.Agent.radius)
         {
-            
             NextState = _stateCatDest;
         }
         
