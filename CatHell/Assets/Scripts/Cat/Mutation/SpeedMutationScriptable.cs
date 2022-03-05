@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "", menuName = "Mutation/SpeedMutation")]
+[CreateAssetMenu(fileName = "SpeedMutation", menuName = "Mutation/SpeedMutation")]
 public class SpeedMutationScriptable : MutationScriptable
 {
     public float Speed;

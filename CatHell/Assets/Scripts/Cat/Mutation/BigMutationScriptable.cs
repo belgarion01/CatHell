@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "", menuName = "Mutation/BigMutation")]
+[CreateAssetMenu(fileName = "BigMutation", menuName = "Mutation/BigMutation")]
 public class BigMutationScriptable : MutationScriptable
 {
     public float Speed;

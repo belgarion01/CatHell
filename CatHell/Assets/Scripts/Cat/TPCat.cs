@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-[CreateAssetMenu(fileName = "", menuName = "Mutation/TPCat")]
+
 public class TPCat : MonoBehaviour
 {
     private float timer;
