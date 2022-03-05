@@ -3,12 +3,15 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable 
+public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
 {
+    
+    public float Speed;
+    public float AngularSpeed;
     public MachineCat Machine;
     public MutationCat Mutation;
     public Animator Animator;
-    public MeshFilter MeshFilter;
+    public SkinnedMeshRenderer SkinnedMeshRenderer;
     public NavMeshAgent Agent;
     public float mutationShootFailure;
     public UnityEvent ShootSuccessEvent;
@@ -25,11 +28,13 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
         Animator = GetComponent<Animator>();
         if(Agent == null)
         Agent = GetComponent<NavMeshAgent>();
-        if(MeshFilter == null)
-        MeshFilter = GetComponent<MeshFilter>();
+        if(SkinnedMeshRenderer == null)
+        SkinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
     }
     public Vector3 OffsetCat;
+    public bool IsHoldableCat = true;
     public Vector3 offset { get => OffsetCat; }
+    public bool isHoldable { get => IsHoldableCat; }
 
     public void OnTake(GameObject user)
     {

@@ -12,15 +12,6 @@ public class StateCatWait : StateCat
     protected StateCat _endWaitState;
 
     private bool _hideEndWaitState => GetType() == typeof(StateCatIdle) ; 
-    public override void ToMutation()
-    {
-        base.ToMutation();
-        StateCatWait mutationStateType = (StateCatWait) MutationState;
-        _timeWait = mutationStateType._timeWait;
-        _endWaitState = mutationStateType._endWaitState;
-        
-    }
-
     
     public override void StartState()
     {

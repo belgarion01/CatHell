@@ -6,13 +6,6 @@ using Random = UnityEngine.Random;
 
 public class StateCatIdle : StateCatWait
 {
-    public override void ToMutation()
-    {
-        base.ToMutation();
-        StateCatIdle mutationStateType = (StateCatIdle) MutationState;
-        _stateCatProbabilitiesList.Clear();
-      _stateCatProbabilitiesList.AddRange(mutationStateType._stateCatProbabilitiesList);  
-    }
     [SerializeField]
     private List<StateCatProbability> _stateCatProbabilitiesList;
     public override void EndWait()

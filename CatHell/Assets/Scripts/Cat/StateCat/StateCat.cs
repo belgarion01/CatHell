@@ -15,11 +15,6 @@ private void OnValidate()
  if(_cat == null)
   _cat = GetComponent<Cat>();
 }
-virtual public void ToMutation()
-{
- if(MutationState.MutationState != null)
- MutationState = MutationState.MutationState;
-}
 
  virtual public void StartState()
  {

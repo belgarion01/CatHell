@@ -4786,6 +4786,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  TPPositionList: []
 --- !u!1001 &856577016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9251,6 +9252,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2029427084342931735, guid: 3543994661f381a4c864d106d995130c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029427084342931735, guid: 3543994661f381a4c864d106d995130c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2029427084342931754, guid: 3543994661f381a4c864d106d995130c,
         type: 3}
       propertyPath: m_RootOrder
@@ -12490,6 +12501,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162705000832026941, guid: fd54bc735ee163348a4f5ce02c2b93b0,
+        type: 3}
+      propertyPath: OnMutationChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162705000832026941, guid: fd54bc735ee163348a4f5ce02c2b93b0,
+        type: 3}
+      propertyPath: OnMutationChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162705000832026941, guid: fd54bc735ee163348a4f5ce02c2b93b0,
+        type: 3}
+      propertyPath: OnMutationChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd54bc735ee163348a4f5ce02c2b93b0, type: 3}

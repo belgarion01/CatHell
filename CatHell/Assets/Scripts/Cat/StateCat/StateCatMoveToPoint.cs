@@ -1,4 +1,4 @@
-
+ 
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +9,6 @@ public class StateCatMoveToPoint :  StateCat
 {
     [SerializeField]
     private List<StateCatDestination> _stateCatDestinationList;
-
-    
     private Vector3 _destination;
     private StateCat _stateCatDest;
 
@@ -23,19 +21,11 @@ public class StateCatMoveToPoint :  StateCat
         }
     }
 
-    public override void ToMutation()
-    {
-        base.ToMutation();
-        StateCatMoveToPoint mutationStateType = (StateCatMoveToPoint) MutationState;
-        _angularSpeed = mutationStateType._angularSpeed;
-        _speed = mutationStateType._speed;
-        _stateCatDestinationList.Clear();
-        _stateCatDestinationList.AddRange(mutationStateType._stateCatDestinationList);
-        
-    }
-[SerializeField]
-    private float _angularSpeed;
-    [SerializeField]  private float _speed;
+    [SerializeField]
+    private float angularSpeedFactor;
+    [SerializeField]
+    private float speedFactor;
+
     public override void StartState()
     {
         NavMeshHit _hit;
@@ -52,8 +42,8 @@ public class StateCatMoveToPoint :  StateCat
         NavMesh.SamplePosition(_destination, out _hit, Vector3.Distance(transform.position, _destination), 1 );
         _destination = _hit.position;
            _cat.Agent.SetDestination(_destination);
-        _cat.Agent.speed = _speed;
-        _cat.Agent.angularSpeed = _angularSpeed;
+        _cat.Agent.speed = _cat.Speed*speedFactor;
+        _cat.Agent.angularSpeed = _cat.AngularSpeed*angularSpeedFactor;
     }
 
     public override void UpdateState()

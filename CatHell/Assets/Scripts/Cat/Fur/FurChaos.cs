@@ -14,7 +14,7 @@ public class FurChaos : MonoBehaviour
         var furCount = Physics.OverlapSphereNonAlloc(transform.position, _overlapRadius, new Collider[20], _furLayerMask);
         if (_cat != null)
         {
-            //GenerateChaos per cat
+            _cat.Mutation.AddMutation(_chaosPerFur*furCount);
         }
     }
 

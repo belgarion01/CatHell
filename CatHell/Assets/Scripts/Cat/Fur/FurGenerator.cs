@@ -7,7 +7,12 @@ public class FurGenerator : MonoBehaviour
 {
     [SerializeField] private Fur _furPrefab;
     [SerializeField] private float _timeBetweenGeneration = 4f;
-    
+
+    public float TimeBetweenGeneration
+    {
+        get => _timeBetweenGeneration;
+        set => _timeBetweenGeneration = value;
+    }
     private float _tickTimer;
     
     private void Update()

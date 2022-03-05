@@ -49,6 +49,8 @@ public class PlayerInteraction : MonoBehaviour
     
    public void TakeHoldableObject(IHoldable holdable)
    {
+       if(!holdable.isHoldable)
+           return;
        _currentHoldableObject = holdable;
        _currentHoldableObject.OnTake(gameObject);
        transform.SetParent(Camera.main.transform);

@@ -7,10 +7,10 @@ using Random = UnityEngine.Random;
 
 public class StateCatPatrol : StateCat
 {
-   [SerializeField]
-  private float _angularSpeed;
-  [SerializeField]
-  private float _speed;
+    [SerializeField]
+    private float angularSpeedFactor;
+    [SerializeField]
+    private float speedFactor;
   [SerializeField]
   private float _minLength;
   [SerializeField]
@@ -22,23 +22,11 @@ public class StateCatPatrol : StateCat
   
   [SerializeField]
   private List<StateCatProbability> _stateCatProbabilitiesList;
-  public override void ToMutation()
-  {
-      base.ToMutation();
-      StateCatPatrol mutationStateType = (StateCatPatrol) MutationState;
-      _angularSpeed = mutationStateType._angularSpeed;
-      _speed = mutationStateType._speed;
-      _minLength = mutationStateType._minLength;
-      _maxLength = mutationStateType._maxLength;
-      _timePatrol = mutationStateType._timePatrol;
-      _stateCatProbabilitiesList.Clear();
-      _stateCatProbabilitiesList.AddRange(mutationStateType._stateCatProbabilitiesList);
-  }
-
+  
   public override void StartState()
   {
-    _cat.Agent.speed = _speed;
-        _cat.Agent.angularSpeed = _angularSpeed;
+    _cat.Agent.speed = _cat.Speed*speedFactor;
+        _cat.Agent.angularSpeed = _cat.AngularSpeed*angularSpeedFactor;
     _timerPatrol = 0; 
   GenerateDestination();
   }
