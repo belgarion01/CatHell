@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Sirenix.OdinInspector;
+
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,13 +11,18 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
     public NavMeshAgent Agent;
     // Start is called before the first frame update
 
-    [Button]
-    public void SetCat()
+
+    public void OnValidate()
     {
+        if(Machine == null)
         Machine = GetComponent<MachineCat>();
+        if(Mutation == null)
         Mutation = GetComponent<MutationCat>();
+        if(Animator == null)
         Animator = GetComponent<Animator>();
+        if(Agent == null)
         Agent = GetComponent<NavMeshAgent>();
+        if(MeshFilter == null)
         MeshFilter = GetComponent<MeshFilter>();
     }
     public void OnTake(GameObject user)

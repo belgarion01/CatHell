@@ -1,12 +1,12 @@
-using System.Collections;
+
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
+
 using UnityEngine;
 
 public class MutationCat : MonoBehaviour
 {
-   [ReadOnly] [SerializeField] private Cat _cat;
-    
+    private Cat _cat;
+    public bool IsMutated => MutateCat != null;
     [SerializeField] int _maxMutation;
     private int _currentMutation;
     public List<StateCat> MutateStateAddList;
@@ -41,10 +41,12 @@ public class MutationCat : MonoBehaviour
             }
         }
     }
-    [Button]
-    public void SetCat()
+
+    private void OnValidate()
     {
+        if(_cat == null)
         _cat = GetComponent<Cat>();
     }
+    
 
 }

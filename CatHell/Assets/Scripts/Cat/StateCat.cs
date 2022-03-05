@@ -1,21 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 public  class StateCat : MonoBehaviour
 {
- 
-[ReadOnly] [SerializeField]
  protected Cat _cat;
 [ReadOnly]
 public StateCat NextState;
 public StateCatEnum StateCatEnum;
 public StateCat MutationState;
-[Button]
-public void SetCat()
+private void OnValidate()
 {
-_cat = GetComponent<Cat>();
+ if(_cat == null)
+  _cat = GetComponent<Cat>();
 }
 virtual public void ToMutation()
 {
