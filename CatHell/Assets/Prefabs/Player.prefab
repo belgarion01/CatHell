@@ -1547,6 +1547,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   _interactableWidget: {fileID: 1007383338}
+  _bottomPlayer: {fileID: 0}
 --- !u!1001 &2029427083440503564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1734,10 +1735,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2029427084342931754}
     m_Modifications:
+    - target: {fileID: 3006269410422429103, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_Spacing
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006269410422429103, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3493023348459379592, guid: 71d1d73f9800df64a8ac0b071e9f630c,
         type: 3}
       propertyPath: m_Name
       value: Player HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493023348459379595, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2029427083074685609}
+    - target: {fileID: 3493023348459379595, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493023348459379595, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3493023348459379604, guid: 71d1d73f9800df64a8ac0b071e9f630c,
         type: 3}
@@ -1849,6 +1875,21 @@ PrefabInstance:
       propertyPath: _playerToolBox
       value: 
       objectReference: {fileID: 2091460557}
+    - target: {fileID: 8177125012755822629, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177125012755822629, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177125012755822629, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d1d73f9800df64a8ac0b071e9f630c, type: 3}
 --- !u!224 &32398096 stripped
@@ -1869,3 +1910,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073b7780268ed6744bb038cef7f664b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1089259261963982399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4567887786989164219, guid: 71d1d73f9800df64a8ac0b071e9f630c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3493023348458209412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &153695775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089259261963982399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2

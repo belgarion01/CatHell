@@ -16,11 +16,12 @@ public class Toolbar : MonoBehaviour
     private void Start()
     {
         _playerToolBox.OnToolSelected.AddListener(OnToolSelected);
-        
-        foreach (Tool tool in _playerToolBox.Tools)
+
+        for (int i = 0; i < _playerToolBox.Tools.Count; i++)
         {
+            Tool tool = _playerToolBox.Tools[i];
             ToolbarBox tbb = Instantiate(_toolbarBoxPrefab, transform);
-            tbb.Init(tool);
+            tbb.Init(tool, i);
             _toolbarBoxes.Add(tbb);
         }
     }

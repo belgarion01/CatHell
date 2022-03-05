@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b3f03bdd347f44daa157d0160c786a, type: 3}
   m_Name: Tool_Hug
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: ffb54d9a414c7604dbbd65b16fbbbfd6, type: 3}
+  Sprite: {fileID: 21300000, guid: cd52ac7ac0cc38c41b7f729c4190a566, type: 3}
   _hugMaxDistance: 5
