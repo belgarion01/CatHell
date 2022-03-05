@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcbad4c71c3bed41b488ff3151fef48, type: 3}
   m_Name: Tool_Cleaner
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  Sprite: {fileID: 21300000, guid: 9578ae0160611da4cbad8ffad4d44da3, type: 3}

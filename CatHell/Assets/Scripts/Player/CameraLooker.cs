@@ -30,7 +30,7 @@ public class CameraLooker : MonoBehaviour
         _playerTransform.Rotate(Vector3.up, mouseDelta.x);
 
         x -= mouseDelta.y;
-        float cameraAngle = Mathf.Clamp(x, -90, 90);
+        float cameraAngle = Mathf.Clamp(x, -85, 85);
         _cameraTransform.localRotation = Quaternion.Euler(new Vector3(cameraAngle, 0, 0));
     }
 }
