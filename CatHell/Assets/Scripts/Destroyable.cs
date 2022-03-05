@@ -13,4 +13,6 @@ public class Destroyable : MonoBehaviour, IDestroyable, IInteractable
     {
         Destroy(gameObject);
     }
+
+    public string ActionName => "Destroy Sphere";
 }

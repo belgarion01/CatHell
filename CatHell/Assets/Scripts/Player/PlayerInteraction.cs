@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private Camera _playerCamera;
     [SerializeField] private InputAction _interactAction;
+    [SerializeField] private InteractableWidget _interactableWidget;
 
     public IInteractable TargetInteractable { get; private set; }
 
@@ -19,13 +20,18 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
+        TargetInteractable = null;
+        
         RaycastHit hit;
         if (Physics.Raycast(_playerCamera.transform.position, _playerCamera.transform.forward, out hit))
         {
             if (hit.transform.TryGetComponent(out IInteractable interactable))
             {
                 TargetInteractable = interactable;
+                _interactableWidget.UpdateUI(TargetInteractable);
             }
         }
+        
+        _interactableWidget.SetEnable(TargetInteractable != null);
     }
 }
