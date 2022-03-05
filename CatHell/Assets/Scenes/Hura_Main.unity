@@ -1078,11 +1078,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
-        type: 3}
-      propertyPath: _timeBetweenTicks
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5193979230233050609, guid: 4a28db42c506ec0499510f477ac6b03b,
         type: 3}
       propertyPath: m_RootOrder

@@ -919,7 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chaosByCat: 0.5
-  _timeBetweenTicks: 0.01
+  _timeBetweenTicks: 1
   _audioSource: {fileID: 6895672655149761049}
   _defaultMusic: {fileID: 8300000, guid: 31de9141027dc83488afedf26901748c, type: 3}
   _discoMusic: {fileID: 8300000, guid: 8da5757ab6520234b9e69154566a7c89, type: 3}

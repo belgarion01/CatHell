@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Shapes;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = MENU_PATH + "MedicGun")]
 public class MedicGun : Tool
 {
     private MedicGunObject _medicGunObject;
+    [SerializeField] private Line _rayFeedback;
     public override void OnUseDown(GameObject player)
     {
         RaycastHit hit;
@@ -16,7 +18,10 @@ public class MedicGun : Tool
             {
                 shootable.OnShoot(player);
             }
-            Debug.DrawLine(_medicGunObject.Muzzle.position, hit.point, Color.red, 1.5f);
+            
+            Line lr = Instantiate(_rayFeedback);
+            lr.Start = _medicGunObject.Muzzle.position;
+            lr.End = hit.point;
         }
     }
 

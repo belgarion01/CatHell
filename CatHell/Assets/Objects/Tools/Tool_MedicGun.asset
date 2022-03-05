@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Tool_MedicGun
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: 5c45ca1e3b5a58a4290ff257d6963c46, type: 3}
+  _rayFeedback: {fileID: 5319564222263029136, guid: 854f2c0225ddddb4ab0915b6be871a56,
+    type: 3}
