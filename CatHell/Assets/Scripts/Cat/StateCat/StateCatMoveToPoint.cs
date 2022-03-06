@@ -20,6 +20,8 @@ public class StateCatMoveToPoint :  StateCat
             stateCatDestination.destination =
                 DestinationCat.instance.destinationCatClassDic[stateCatDestination.destinationCatEnum];
         }
+        
+        _cat.AnimSetWalking();
     }
     [SerializeField]
     private float angularSpeedFactor;

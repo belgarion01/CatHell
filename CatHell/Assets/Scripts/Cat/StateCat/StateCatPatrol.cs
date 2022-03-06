@@ -28,8 +28,10 @@ public class StateCatPatrol : StateCat
       _cat.Agent.isStopped = false;
     _cat.Agent.speed = _cat.Speed*speedFactor;
         _cat.Agent.angularSpeed = _cat.AngularSpeed*angularSpeedFactor;
-    _timerPatrol = 0; 
-  GenerateDestination();
+    _timerPatrol = 0;
+    GenerateDestination();
+    
+    _cat.AnimSetWalking();
   }
 
  void GenerateDestination()

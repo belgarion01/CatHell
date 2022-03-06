@@ -8,6 +8,14 @@ public class StateCatIdle : StateCatWait
 {
     [SerializeField]
     private List<StateCatProbability> _stateCatProbabilitiesList;
+
+    public override void StartState()
+    {
+        base.StartState();
+        
+        _cat.AnimSetIdle();
+    }
+
     public override void EndWait()
     {
         float rand = Random.Range(0, 100);

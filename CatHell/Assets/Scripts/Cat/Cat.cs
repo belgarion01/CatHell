@@ -52,6 +52,7 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
         Agent.isStopped = true;
         Agent.enabled = false;
         Machine.enabled = false; 
+        AnimSetHeld(true);
     }
 
     public void OnDrop(GameObject user)
@@ -62,6 +63,7 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
         if(Agent.isStopped)
         Agent.isStopped = false;
         Machine.SetState(StateCatEnum.Idle);
+        AnimSetHeld(false);
     }
 
     public void Interact(GameObject user)
@@ -93,5 +95,25 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
             Mathf.InverseLerp(_lastHugTime, _lastHugTime + 5f, Time.time - _lastHugTime));
         Mutation.AddMutation(-decreaseMutation);
         OnHug?.Invoke();
+    }
+
+    public void AnimSetIdle()
+    {
+        Animator.SetBool("Walking", false);
+    }
+
+    public void AnimSetWalking()
+    {
+        Animator.SetBool("Walking", true);
+    }
+
+    public void AnimSetHeld(bool held)
+    {
+        Animator.SetBool("Held", held);
+    }
+
+    public void AnimSetDisco(bool enable)
+    {
+        Animator.SetBool("Disco", enable);
     }
 }

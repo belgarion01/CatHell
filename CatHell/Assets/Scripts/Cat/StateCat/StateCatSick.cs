@@ -10,6 +10,7 @@ public class StateCatSick : StateCat
     public override void StartState()
     {
         _cat.Agent.isStopped = true;
+        _cat.AnimSetIdle();
     }
 
     public override void UpdateState()

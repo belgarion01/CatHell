@@ -160,26 +160,25 @@ public bool InDisco;
 
     public void SetDiscoEnabled(bool enable)
     {
-        Debug.Log("test");
         foreach (Cat cat in CatsInHouse)
         {
             if (!cat.isHoldable)
             {
-                            if (enable)
-                            {
-                              
-                                cat.Agent.isStopped = enable;
-                                cat.Agent.enabled = !enable;
-                            }
-                                else
-                            { 
-                                cat.Agent.enabled = !enable;
-                                cat.Agent.isStopped = enable;
-                            }
-                            cat.Machine.enabled = !enable;
+                if (enable)
+                {
+                  
+                    cat.Agent.isStopped = enable;
+                    cat.Agent.enabled = !enable;
+                }
+                    else
+                { 
+                    cat.Agent.enabled = !enable;
+                    cat.Agent.isStopped = enable;
+                }
+                cat.Machine.enabled = !enable;
             }
-
             
+            cat.AnimSetDisco(enable);
         }
         InDisco = enable;
         _audioSource.clip = enable ? _discoMusic : _defaultMusic;
