@@ -96,7 +96,7 @@ MonoBehaviour:
   SickBubbleEffect: {fileID: 6894867088222365632}
   ScratchEffect: {fileID: 3082774768877293238}
   Speed: 3.5
-  AngularSpeed: 120
+  AngularSpeed: 300
   Machine: {fileID: 162705000832026935}
   Mutation: {fileID: 162705000832026941}
   Animator: {fileID: 7313294973368120560}
@@ -133,7 +133,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7653428a3cf94ce4785d36f13d408ea1, type: 2}
   IsMutated: 0
   _maxMutation: 100
-  _mutatationChaosFactor: 0
+  _mutatationChaosFactor: 0.2
   OnMutationChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -184,6 +184,8 @@ MonoBehaviour:
   - minProbability: 81
     maxProbability: 100
     stateCat: {fileID: 162705000832026943}
+  _minTimeIdle: 0
+  _maxTimeIdle: 0
 --- !u!114 &162705000832026933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +236,8 @@ MonoBehaviour:
   speedFactor: 0.5
   _minLength: 5
   _maxLength: 10
-  _timePatrol: 5
+  _minTimePatrol: 0
+  _maxTimePatrol: 0
   _stateCatProbabilitiesList:
   - minProbability: 0
     maxProbability: 40
@@ -326,8 +329,8 @@ MonoBehaviour:
   _furLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _chaosPerFur: 0.01
-  _overlapRadius: 1.5
+  _chaosPerFur: 0.5
+  _overlapRadius: 3.5
 --- !u!136 &2559573879954402138
 CapsuleCollider:
   m_ObjectHideFlags: 0

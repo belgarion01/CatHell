@@ -11,10 +11,11 @@ public class FurChaos : MonoBehaviour
     [SerializeField] private float _overlapRadius;
     private void Update()
     {
-        var furCount = Physics.OverlapSphereNonAlloc(transform.position, _overlapRadius, new Collider[20], _furLayerMask);
+        var furCount = Physics.OverlapSphereNonAlloc(transform.position, _overlapRadius, new Collider[20], _furLayerMask) - 1;
+        furCount = Mathf.Max(0, furCount);
         if (_cat != null)
         {
-            _cat.Mutation.AddMutation(_chaosPerFur*furCount);
+            _cat.Mutation.AddMutation(_chaosPerFur*furCount*Time.deltaTime);
         }
     }
 
