@@ -6,6 +6,8 @@ using UnityEngine;
 public class MachineCat : MonoBehaviour
 {
 
+   [SerializeField]
+   private Cat _cat;
    public List<StateCat> StateCatList;
    [ReadOnly]
    public StateCat CurrentStateCat;
@@ -15,6 +17,7 @@ public class MachineCat : MonoBehaviour
    {
       _isStartCurrentStateCat = true;
       CurrentStateCat.NextState = null;
+     _cat.SickBubbleEffect.SetActive(false);
       for (int i = 0; i < StateCatList.Count; i++)
       {
          if (stateCatEnum == StateCatList[i].StateCatEnum)

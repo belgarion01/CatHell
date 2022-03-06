@@ -7,8 +7,11 @@ public class StateCatSick : StateCat
 {
     [SerializeField]
     private float mutationValue;
+
+   
     public override void StartState()
     {
+        _cat.SickBubbleEffect.SetActive(true);
         _cat.Agent.isStopped = true;
         _cat.AnimSetIdle();
     }

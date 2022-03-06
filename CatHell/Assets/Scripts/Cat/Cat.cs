@@ -7,7 +7,8 @@ using UnityEngine.Events;
 public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
 {
     [SerializeField] private float _hugMaxMutationDecrease = 5f;
-    
+ public GameObject SickBubbleEffect;
+ public  GameObject ScratchEffect;
     public float Speed;
     public float AngularSpeed;
     public MachineCat Machine;
@@ -79,6 +80,7 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
         if (Machine.CurrentStateCat.StateCatEnum == StateCatEnum.Sick)
         {
             Machine.SetState(StateCatEnum.Idle);
+            SickBubbleEffect.SetActive(false);
             ShootSuccessEvent?.Invoke();
         }
         else
