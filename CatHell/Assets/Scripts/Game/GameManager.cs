@@ -53,9 +53,15 @@ private List<Material> _catSkinList;
 float _timerDisco;
 [SerializeField]
 float _timeDisco;
-
+public int SpawnCatAtStart;
 public bool InDisco;
-
+private void Start()
+{
+    for (int i = 0; i < SpawnCatAtStart; i++)
+    {
+        SpawnCat();
+    }
+}
     void Awake()
     {
         if (_instance != null && _instance != this)
