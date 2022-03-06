@@ -38,20 +38,20 @@ Material:
     - _Glossiness: 32
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Rim: 0.1
-    - _RimAmount: 0.7
+    - _Rim: 0
+    - _RimAmount: 0
     - _Tiling: 6
     m_Colors:
     - _AmbientColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
-    - _Color: {r: 1, g: 0.5792453, b: 0.5792453, a: 0}
-    - _DiscoColor1: {r: 1, g: 0.63584906, b: 0.9020771, a: 0}
-    - _DiscoColor2: {r: 1, g: 0, b: 0, a: 0}
-    - _DiscoColor3: {r: 0.5226415, g: 0.88224465, b: 1, a: 0}
-    - _DiscoColor4: {r: 1, g: 0.63529414, b: 0.90196085, a: 0}
-    - _DiscoColor5: {r: 1, g: 0, b: 0, a: 0}
-    - _DiscoColor6: {r: 0.52156866, g: 0.882353, b: 1, a: 0}
+    - _Color: {r: 0.9528302, g: 0.9282229, b: 0.8215913, a: 0}
+    - _DiscoColor1: {r: 0.7490196, g: 0.47843137, b: 0.6784314, a: 0}
+    - _DiscoColor2: {r: 0.7490196, g: 0, b: 0, a: 0}
+    - _DiscoColor3: {r: 0.39215687, g: 0.6627451, b: 0.7490196, a: 0}
+    - _DiscoColor4: {r: 0.7490196, g: 0.47843137, b: 0.6784314, a: 0}
+    - _DiscoColor5: {r: 0.7490196, g: 0, b: 0, a: 0}
+    - _DiscoColor6: {r: 0.39215687, g: 0.6627451, b: 0.7490196, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 0}
-    - _NightColor: {r: 0.20995015, g: 0.21712855, b: 0.33018863, a: 0}
+    - _NightColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimColor: {r: 8, g: 8, b: 8, a: 0}
     - _SpeculatColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
