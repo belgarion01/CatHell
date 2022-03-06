@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _defaultMusic;
     [SerializeField] private AudioClip _discoMusic;
+    [SerializeField] private TextMeshProUGUI _savedCatsTextMesh;
 
     
     private List<Cat> _catsInHouse = new List<Cat>();
@@ -147,6 +149,7 @@ public bool InDisco;
     public void GameOver()
     {
         _isGamePaused = true;
+        _savedCatsTextMesh.text = $"You save {_catsInHouse.Count} cats!";
         OnGameOver?.Invoke();
     }
 

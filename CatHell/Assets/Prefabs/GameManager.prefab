@@ -47,10 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chaosByCat: 0.5
-  _timeBetweenTicks: 1
+  _timeBetweenTicks: 0.01
   _audioSource: {fileID: 6895672655149761049}
   _defaultMusic: {fileID: 8300000, guid: 31de9141027dc83488afedf26901748c, type: 3}
   _discoMusic: {fileID: 8300000, guid: 8da5757ab6520234b9e69154566a7c89, type: 3}
+  _savedCatsTextMesh: {fileID: 2515170549715499041}
   OnChaosChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -314,3 +315,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3990376961569704394}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2515170549715499041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1551214083994497515, guid: f0cc4c2fc38d4454fba59c1fb46635ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 3990376961569704394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
