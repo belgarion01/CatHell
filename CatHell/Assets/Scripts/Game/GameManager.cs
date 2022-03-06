@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private VolumeProfile _discoVolume;
     [SerializeField] private Volume _sceneVolume;
     [SerializeField] private TextMeshProUGUI _savedCatsTextMesh;
-
-    
     private List<Cat> _catsInHouse = new List<Cat>();
     public List<Cat> CatsInHouse => _catsInHouse;
     public int MutatedCatsInHouse => _catsInHouse.Count(x => x.Mutation.IsMutated);
@@ -182,7 +180,6 @@ public bool InDisco;
             {
                 if (enable)
                 {
-                  
                     cat.Agent.isStopped = enable;
                     cat.Agent.enabled = !enable;
                 }
