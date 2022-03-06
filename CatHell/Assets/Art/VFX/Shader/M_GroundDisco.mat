@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2399636443538319931
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MT_Blue
-  m_Shader: {fileID: -6465566751694194690, guid: 053d49180248e35499670eb1bca05626,
+  m_Name: M_GroundDisco
+  m_Shader: {fileID: -6465566751694194690, guid: 9f22296511e9b7d4ab3210bc75fb0d23,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -53,11 +40,31 @@ Material:
     - _QueueOffset: 0
     - _Rim: 0.1
     - _RimAmount: 0.7
+    - _Tiling: 6
     m_Colors:
     - _AmbientColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
-    - _Color: {r: 0.2113207, g: 0.33956712, b: 1, a: 0}
+    - _Color: {r: 1, g: 0.5792453, b: 0.5792453, a: 0}
+    - _DiscoColor1: {r: 1, g: 0.63584906, b: 0.9020771, a: 0}
+    - _DiscoColor2: {r: 1, g: 0, b: 0, a: 0}
+    - _DiscoColor3: {r: 0.5226415, g: 0.88224465, b: 1, a: 0}
+    - _DiscoColor4: {r: 1, g: 0.63529414, b: 0.90196085, a: 0}
+    - _DiscoColor5: {r: 1, g: 0, b: 0, a: 0}
+    - _DiscoColor6: {r: 0.52156866, g: 0.882353, b: 1, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _NightColor: {r: 0.20995015, g: 0.21712855, b: 0.33018863, a: 0}
     - _RimColor: {r: 8, g: 8, b: 8, a: 0}
     - _SpeculatColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &7243165371535983042
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
