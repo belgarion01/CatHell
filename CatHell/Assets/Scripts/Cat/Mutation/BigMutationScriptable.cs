@@ -15,5 +15,6 @@ public class BigMutationScriptable : MutationScriptable
         cat.Speed = Speed;
         cat.AngularSpeed = AngularSpeed;
         cat.OffsetCat = Offset;
+        cat.SkinnedMeshRenderer.transform.parent.localScale *= 3f;
     }
 }

@@ -133,7 +133,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7653428a3cf94ce4785d36f13d408ea1, type: 2}
   IsMutated: 0
   _maxMutation: 100
-  _mutatationChaosFactor: 0.2
+  _mutationChaosFactor: 0
   OnMutationChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -184,8 +184,8 @@ MonoBehaviour:
   - minProbability: 81
     maxProbability: 100
     stateCat: {fileID: 162705000832026943}
-  _minTimeIdle: 0
-  _maxTimeIdle: 0
+  _minTimeIdle: 2
+  _maxTimeIdle: 5
 --- !u!114 &162705000832026933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,10 +234,10 @@ MonoBehaviour:
   StateCatEnum: 2
   angularSpeedFactor: 0.5
   speedFactor: 0.5
-  _minLength: 5
-  _maxLength: 10
-  _minTimePatrol: 0
-  _maxTimePatrol: 0
+  _minLength: 8
+  _maxLength: 20
+  _minTimePatrol: 4
+  _maxTimePatrol: 7
   _stateCatProbabilitiesList:
   - minProbability: 0
     maxProbability: 40

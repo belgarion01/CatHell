@@ -13,8 +13,6 @@ using UnityEngine;
     
         cat.SkinnedMeshRenderer.sharedMesh = mutateMesh;
         cat.SkinnedMeshRenderer.material = Material;
-        if(MutateAnimatorController != null)
-        cat.Animator.runtimeAnimatorController = MutateAnimatorController;
         cat.Machine.SetState(StateCatEnum.Idle);
     }
 }
