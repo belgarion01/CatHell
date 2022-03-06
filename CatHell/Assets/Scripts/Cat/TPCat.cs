@@ -29,8 +29,8 @@ public class TPCat : MonoBehaviour
         {
             if (!cat.isHoldable && cat.Machine.CurrentStateCat.StateCatEnum != StateCatEnum.Sick && isReadyToTP)
             {
-                int rand = Random.Range(0, DestinationCat.instance.TPPositionList.Count );
-                transform.position = DestinationCat.instance.TPPositionList[rand].position;
+                int rand = Random.Range(0, DestinationCat.instance.spawnerCatList.Length );
+                transform.position = DestinationCat.instance.spawnerCatList[rand].position;
                 cat.Machine.SetState(StateCatEnum.Idle);
                 timer = 0; 
                 isReadyToTP = false;

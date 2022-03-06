@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _defaultMusic;
     [SerializeField] private AudioClip _discoMusic;
+
     
     private List<Cat> _catsInHouse = new List<Cat>();
 
@@ -32,6 +34,10 @@ public class GameManager : MonoBehaviour
     public UnityEvent<float> OnChaosChanged;
     public UnityEvent OnGameOver;
     public UnityEvent<bool> OnDiscoChanged;
+    [SerializeField] private GameObject catPrefab;
+
+[SerializeField] private float timeSpawn;
+private float timerSpawn;
 
     void Awake()
     {
@@ -57,8 +63,26 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+        if(CheckSpawnCat())
+            SpawnCat();
+        
     }
 
+    public bool CheckSpawnCat()
+    {
+        if (timeSpawn > timerSpawn)
+        {
+            timerSpawn += Time.deltaTime;
+            return false;
+        }
+        timerSpawn = 0;
+        return true;
+    }
+    public void SpawnCat()
+    {
+        int rand = Random.Range(0, DestinationCat.instance.spawnerCatList.Length);
+        Instantiate(catPrefab, DestinationCat.instance.spawnerCatList[rand].position, Quaternion.identity);
+    }
     private void Tick()
     {
         int numberOfMutatedCats = _catsInHouse.Count(x => x.Mutation.IsMutated);

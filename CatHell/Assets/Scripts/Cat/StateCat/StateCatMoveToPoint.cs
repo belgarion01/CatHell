@@ -48,12 +48,9 @@ public class StateCatMoveToPoint :  StateCat
 
     public override void UpdateState()
     {
-        Debug.Log(_cat.Agent.isStopped);
-        Debug.Log(Vector3.Distance(transform.position, _destination));
         if (Vector3.Distance(transform.position, _destination) <= _cat.Agent.radius)
         {
             NextState = _stateCatDest;
         }
-        
     }
 }

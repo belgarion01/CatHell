@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -35,6 +36,11 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
     public bool IsHoldableCat = true;
     public Vector3 offset { get => OffsetCat; }
     public bool isHoldable { get => IsHoldableCat; }
+
+    private void Start()
+    {
+        GameManager.Instance.SubscribeCat(this);
+    }
 
     public void OnTake(GameObject user)
     {

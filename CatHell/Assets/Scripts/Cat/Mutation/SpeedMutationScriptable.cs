@@ -10,6 +10,7 @@ public class SpeedMutationScriptable : MutationScriptable
     {
         base.Mutate(cat);
         cat.Speed = Speed;
+        cat.gameObject.AddComponent<TPCat>();
         cat.AngularSpeed = AngularSpeed;
     }
 }

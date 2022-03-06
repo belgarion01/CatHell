@@ -6,7 +6,7 @@ using UnityEngine;
 public class DestinationCat : SerializedMonoBehaviour
 {
  public static DestinationCat instance;
- public List<Transform> TPPositionList;
+ public Transform[] spawnerCatList;
  private void Awake()
  {
   if (instance == null)

@@ -944,6 +944,10 @@ MonoBehaviour:
   OnDiscoChanged:
     m_PersistentCalls:
       m_Calls: []
+  catPrefab: {fileID: 162705000832026894, guid: fd54bc735ee163348a4f5ce02c2b93b0,
+    type: 3}
+  spawnerCatList: []
+  timeSpawn: 20
 --- !u!82 &6895672655149761049
 AudioSource:
   m_ObjectHideFlags: 0
