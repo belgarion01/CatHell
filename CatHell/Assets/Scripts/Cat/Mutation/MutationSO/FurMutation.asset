@@ -15,4 +15,5 @@ MonoBehaviour:
   mutateMesh: {fileID: -8670151273213183110, guid: 46b6464d83ecf1a42bdf8fa2c46924e9,
     type: 3}
   MutateAnimatorController: {fileID: 0}
+  Material: {fileID: 2100000, guid: 3955657bb7f92d3418397f9c881d7605, type: 2}
   TimeBetweenGeneration: 2

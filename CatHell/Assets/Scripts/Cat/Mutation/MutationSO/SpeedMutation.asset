@@ -15,6 +15,7 @@ MonoBehaviour:
   mutateMesh: {fileID: -8670151273213183110, guid: 9a105e6098444154ba73b9a56717c49b,
     type: 3}
   MutateAnimatorController: {fileID: 0}
+  Material: {fileID: 2100000, guid: 4fb4d9597d7360f4a97558e8566f4ceb, type: 2}
   Speed: 7
   AngularSpeed: 240
   MaxDistance: 10
