@@ -16,10 +16,11 @@ public class StateCatPatrol : StateCat
   [SerializeField]
   private float _maxLength;
   [SerializeField]
-  private float _timePatrol;
-  
+  private float _minTimePatrol;
+  [SerializeField]
+  private float _maxTimePatrol;
   private float _timerPatrol;
-  
+  private float _timePatrol;
   [SerializeField]
   private List<StateCatProbability> _stateCatProbabilitiesList;
   
@@ -45,6 +46,7 @@ public class StateCatPatrol : StateCat
    NavMesh.SamplePosition(_cat.transform.position + new Vector3(_dir.x, _cat.transform.position.y, _dir.y),
        out _hit, _length, 1);
    _cat.Agent.SetDestination(_hit.position);
+   _timePatrol = Random.Range(_minTimePatrol, _maxTimePatrol);
   }
  public override void UpdateState()
   {

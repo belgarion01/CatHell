@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateCatWait : StateCat
 
 {[SerializeField]
-    private float _timeWait;
+    protected float _timeWait;
     private float _timerWait;
     [SerializeField]
     [HideIf("_hideEndWaitState")]
