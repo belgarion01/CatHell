@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
 
 [SerializeField] private float _timeSpawn;
 private float _timerSpawn;
+[SerializeField]
+private List<Material> _catSkinList;
 
 float _timerDisco;
 [SerializeField]
@@ -108,7 +110,10 @@ public bool InDisco;
   private void SpawnCat()
     {
         int rand = Random.Range(0, DestinationCat.instance.spawnerCatList.Length);
-       GameObject currentCat = Instantiate(_catPrefab, DestinationCat.instance.spawnerCatList[rand].position, Quaternion.identity);
+        int rand2 = Random.Range(0, _catSkinList.Count);
+        
+        GameObject currentCat = Instantiate(_catPrefab, DestinationCat.instance.spawnerCatList[rand].position, Quaternion.identity);
+        currentCat.GetComponent<Cat>().SkinnedMeshRenderer.material = _catSkinList[rand2];
     }
   
     private void Tick()
