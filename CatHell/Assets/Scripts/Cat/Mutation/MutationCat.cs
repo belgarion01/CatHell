@@ -36,7 +36,7 @@ public class MutationCat : MonoBehaviour
             if (_currentMutation == _maxMutation)
             {
                 int rand = Random.Range(0, MutationScriptableList.Length);
-                Debug.Log(_cat);
+                Debug.Log(MutationScriptableList[rand].name);
               MutationScriptableList[rand].Mutate(_cat);
               IsMutated = true;
             }

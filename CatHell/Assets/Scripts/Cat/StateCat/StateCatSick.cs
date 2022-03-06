@@ -11,6 +11,7 @@ public class StateCatSick : StateCat
    
     public override void StartState()
     {
+        
         _cat.SickBubbleEffect.SetActive(true);
         _cat.Agent.isStopped = true;
         _cat.AnimSetIdle();

@@ -42,8 +42,11 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
     public Vector3 offset { get => OffsetCat; }
     public bool isHoldable { get => IsHoldableCat; }
 
+    public bool IsHolded;
+
     private void Start()
     {
+        Agent.updateRotation = true;
         GameManager.Instance.SubscribeCat(this);
     }
 
@@ -51,7 +54,9 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
     {
         if(!Agent.isStopped)
         Agent.isStopped = true;
+        IsHolded = true;
         Agent.enabled = false;
+        transform.LookAt(user.transform, Vector3.up);
         Machine.enabled = false; 
         AnimSetHeld(true);
     }
@@ -63,6 +68,7 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
         Agent.enabled = true;
         if(Agent.isStopped)
         Agent.isStopped = false;
+        IsHolded = false;
         Machine.SetState(StateCatEnum.Idle);
         AnimSetHeld(false);
     }

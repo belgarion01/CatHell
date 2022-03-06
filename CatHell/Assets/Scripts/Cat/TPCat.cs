@@ -23,12 +23,13 @@ public class TPCat : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             if (!cat.isHoldable && cat.Machine.CurrentStateCat.StateCatEnum != StateCatEnum.Sick && isReadyToTP)
             {
+                Debug.Log("je me tp");
                 int rand = Random.Range(0, DestinationCat.instance.spawnerCatList.Length );
                 transform.position = DestinationCat.instance.spawnerCatList[rand].position;
                 cat.Machine.SetState(StateCatEnum.Idle);
