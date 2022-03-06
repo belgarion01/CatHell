@@ -113,21 +113,21 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
 
     public void AnimSetIdle()
     {
-        Animator.SetBool("Walking", false);
+        Animator.SetBool("IsWalking", false);
     }
 
     public void AnimSetWalking()
     {
-        Animator.SetBool("Walking", true);
+        Animator.SetBool("IsWalking", true);
     }
 
     public void AnimSetHeld(bool held)
     {
-        Animator.SetBool("Held", held);
+        Animator.SetBool("IsHeld", held);
     }
 
     public void AnimSetDisco(bool enable)
     {
-        Animator.SetBool("Disco", enable);
+        Animator.SetBool("IsInDisco", enable);
     }
 }
