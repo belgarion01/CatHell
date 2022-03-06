@@ -44,6 +44,7 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
 
     public void OnTake(GameObject user)
     {
+        if(!Agent.isStopped)
         Agent.isStopped = true;
         Agent.enabled = false;
         Machine.enabled = false; 
@@ -54,6 +55,7 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
        
         Machine.enabled = true;
         Agent.enabled = true;
+        if(Agent.isStopped)
         Agent.isStopped = false;
         Machine.SetState(StateCatEnum.Idle);
     }

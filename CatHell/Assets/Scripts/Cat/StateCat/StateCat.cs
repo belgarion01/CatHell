@@ -1,4 +1,5 @@
 
+using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -9,15 +10,19 @@ public  class StateCat : MonoBehaviour
 public StateCat NextState;
 public StateCatEnum StateCatEnum;
 
-private void OnValidate()
+private void Awake()
 {
  if(_cat == null)
   _cat = GetComponent<Cat>();
 }
 
+
+
  virtual public void StartState()
  {
 
+  if(_cat == null)
+   _cat = GetComponent<Cat>();
  }
 
  virtual public void UpdateState()

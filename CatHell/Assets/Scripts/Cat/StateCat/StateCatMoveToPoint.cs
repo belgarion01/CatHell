@@ -14,6 +14,7 @@ public class StateCatMoveToPoint :  StateCat
 
     private void Start()
     {
+        
         foreach (StateCatDestination stateCatDestination in _stateCatDestinationList)
         {
             stateCatDestination.destination =
@@ -27,6 +28,7 @@ public class StateCatMoveToPoint :  StateCat
 
     public override void StartState()
     {
+        
         NavMeshHit _hit;
         _cat.Agent.isStopped = false;
         float rand = Random.Range(0, 100);

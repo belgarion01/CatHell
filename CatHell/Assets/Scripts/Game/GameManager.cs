@@ -36,10 +36,16 @@ public class GameManager : MonoBehaviour
     public UnityEvent<float> OnChaosChanged;
     public UnityEvent OnGameOver;
     public UnityEvent<bool> OnDiscoChanged;
-    [SerializeField] private GameObject catPrefab;
+    [SerializeField] private GameObject _catPrefab;
 
-[SerializeField] private float timeSpawn;
-private float timerSpawn;
+[SerializeField] private float _timeSpawn;
+private float _timerSpawn;
+
+float _timerDisco;
+[SerializeField]
+float _timeDisco;
+
+public bool InDisco;
 
     void Awake()
     {
@@ -54,36 +60,50 @@ private float timerSpawn;
     private void Update()
     {
         _tickTimer += Time.deltaTime;
-
         if (_tickTimer >= _timeBetweenTicks)
         {
             Tick();
             _tickTimer = 0f;
         }
-
         if (_chaosGauge <= 0f)
         {
             GameOver();
         }
         if(CheckSpawnCat())
             SpawnCat();
-        
-    }
 
-    public bool CheckSpawnCat()
-    {
-        if (timeSpawn > timerSpawn)
+        if (InDisco)
         {
-            timerSpawn += Time.deltaTime;
+            if (_timeDisco > _timerDisco)
+                _timerDisco += Time.deltaTime;
+            else SetDiscoEnabled(false);
+        }
+    }
+    public void Launch()
+    {
+        foreach (Cat cat in CatsInHouse)
+        {
+            cat.Machine.enabled = false;
+            cat.Agent.isStopped = true;
+            cat.Agent.enabled = false;
+        }
+        InDisco = true;
+    }
+    
+   private bool CheckSpawnCat()
+    {
+        if (_timeSpawn > _timerSpawn)
+        {
+            _timerSpawn += Time.deltaTime;
             return false;
         }
-        timerSpawn = 0;
+        _timerSpawn = 0;
         return true;
     }
-    public void SpawnCat()
+  private void SpawnCat()
     {
         int rand = Random.Range(0, DestinationCat.instance.spawnerCatList.Length);
-        Instantiate(catPrefab, DestinationCat.instance.spawnerCatList[rand].position, Quaternion.identity);
+       GameObject currentCat = Instantiate(_catPrefab, DestinationCat.instance.spawnerCatList[rand].position, Quaternion.identity);
     }
     private void Tick()
     {
@@ -140,9 +160,30 @@ private float timerSpawn;
 
     public void SetDiscoEnabled(bool enable)
     {
+        Debug.Log("test");
+        foreach (Cat cat in CatsInHouse)
+        {
+            if (!cat.isHoldable)
+            {
+                            if (enable)
+                            {
+                              
+                                cat.Agent.isStopped = enable;
+                                cat.Agent.enabled = !enable;
+                            }
+                                else
+                            { 
+                                cat.Agent.enabled = !enable;
+                                cat.Agent.isStopped = enable;
+                            }
+                            cat.Machine.enabled = !enable;
+            }
+
+            
+        }
+        InDisco = enable;
         _audioSource.clip = enable ? _discoMusic : _defaultMusic;
         _audioSource.Play();
-        
         OnDiscoChanged?.Invoke(enable);
     }
 }
