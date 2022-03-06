@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d952c34f796204796a08a1089dbca2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hugMaxMutationDecrease: 5
   Speed: 3.5
   AngularSpeed: 120
   Machine: {fileID: 162705000832026935}
@@ -104,6 +105,21 @@ MonoBehaviour:
   ShootFailureEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnHug:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9014549544481528174}
+        m_TargetAssemblyTypeName: UnityEngine.VFX.VisualEffect, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OffsetCat: {x: 0, y: 0, z: 5}
   IsHoldableCat: 1
 --- !u!114 &162705000832026941
@@ -372,6 +388,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 162705000832026929}
     m_Modifications:
+    - target: {fileID: 7547023107590016208, guid: 76f00385eeee85542839b5ee6f774c55,
+        type: 3}
+      propertyPath: m_InitialEventName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547023107590016208, guid: 76f00385eeee85542839b5ee6f774c55,
+        type: 3}
+      propertyPath: m_InitialEventNameOverriden
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547023107590016208, guid: 76f00385eeee85542839b5ee6f774c55,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Int.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547023107590016208, guid: 76f00385eeee85542839b5ee6f774c55,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Int.m_Array.Array.data[0].m_Name
+      value: Quantitty
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547023107590016208, guid: 76f00385eeee85542839b5ee6f774c55,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Int.m_Array.Array.data[0].m_Value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547023107590016208, guid: 76f00385eeee85542839b5ee6f774c55,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Int.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7547023107590016211, guid: 76f00385eeee85542839b5ee6f774c55,
         type: 3}
       propertyPath: m_RootOrder
@@ -380,17 +426,17 @@ PrefabInstance:
     - target: {fileID: 7547023107590016211, guid: 76f00385eeee85542839b5ee6f774c55,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.79
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7547023107590016211, guid: 76f00385eeee85542839b5ee6f774c55,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 7547023107590016211, guid: 76f00385eeee85542839b5ee6f774c55,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7547023107590016211, guid: 76f00385eeee85542839b5ee6f774c55,
         type: 3}
@@ -437,6 +483,12 @@ PrefabInstance:
 --- !u!4 &9014549544481528173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7547023107590016211, guid: 76f00385eeee85542839b5ee6f774c55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1560062463417406910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!2083052967 &9014549544481528174 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 7547023107590016208, guid: 76f00385eeee85542839b5ee6f774c55,
     type: 3}
   m_PrefabInstance: {fileID: 1560062463417406910}
   m_PrefabAsset: {fileID: 0}
