@@ -18,7 +18,7 @@ public class FurGenerator : MonoBehaviour
     
     private void Update()
     {
-        if (cat.isHoldable)
+        if (cat.IsHeld)
             return;
         _tickTimer += Time.deltaTime;
 

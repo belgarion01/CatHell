@@ -167,7 +167,7 @@ public bool InDisco;
     {
         foreach (Cat cat in CatsInHouse)
         {
-            if (!cat.isHoldable)
+            if (!cat.IsHeld)
             {
                 if (enable)
                 {

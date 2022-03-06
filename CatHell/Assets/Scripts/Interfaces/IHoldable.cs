@@ -6,7 +6,7 @@ public interface IHoldable
 { 
    public Vector3 offset { get; }
    
-   public bool isHoldable { get; }
-    public void OnTake(GameObject user);
+   public bool IsHeld { get; set; }
+   public void OnTake(GameObject user);
     public void OnDrop(GameObject user);
 }

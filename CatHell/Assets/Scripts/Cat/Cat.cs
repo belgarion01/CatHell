@@ -1,8 +1,10 @@
 
 using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
 {
@@ -40,9 +42,14 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
     public Vector3 OffsetCat;
     public bool IsHoldableCat = true;
     public Vector3 offset { get => OffsetCat; }
-    public bool isHoldable { get => IsHoldableCat; }
 
-    public bool IsHolded;
+    public bool IsHeld
+    {
+        get => isHeld;
+        set { isHeld = value; }
+    }
+
+    [FormerlySerializedAs("_isHolded")] public bool isHeld;
 
     private void Start()
     {
@@ -54,7 +61,6 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
     {
         if(!Agent.isStopped)
         Agent.isStopped = true;
-        IsHolded = true;
         Agent.enabled = false;
         transform.LookAt(user.transform, Vector3.up);
         Machine.enabled = false; 
@@ -68,13 +74,13 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
         Agent.enabled = true;
         if(Agent.isStopped)
         Agent.isStopped = false;
-        IsHolded = false;
         Machine.SetState(StateCatEnum.Idle);
         AnimSetHeld(false);
     }
 
     public void Interact(GameObject user)
     {
+        if(IsHoldableCat)
        user.GetComponent<PlayerInteraction>().TakeHoldableObject(this);
     }
 

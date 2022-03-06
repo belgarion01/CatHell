@@ -17,3 +17,5 @@ MonoBehaviour:
   MutateAnimatorController: {fileID: 0}
   Speed: 7
   AngularSpeed: 240
+  MaxDistance: 10
+  TimeCooldown: 8

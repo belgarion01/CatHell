@@ -50,8 +50,9 @@ public class PlayerInteraction : MonoBehaviour
     
    public void TakeHoldableObject(IHoldable holdable)
    {
-       if(!holdable.isHoldable)
+       if(holdable.IsHeld)
            return;
+       holdable.IsHeld = true; 
        _currentHoldableObject = holdable;
        MonoBehaviour holdableMono = holdable as MonoBehaviour;
        _currentHoldableObject.OnTake(gameObject);
@@ -62,6 +63,7 @@ public class PlayerInteraction : MonoBehaviour
 
    public void DropHoldableObject(IHoldable holdable)
    {
+       holdable.IsHeld = false; 
        _currentHoldableObject.OnDrop(gameObject);
       MonoBehaviour holdableMono = holdable as MonoBehaviour;
       holdableMono.transform.SetParent(null);
