@@ -54,7 +54,8 @@ MonoBehaviour:
   _discoFloor: {fileID: 0}
   _defaultVolume: {fileID: 11400000, guid: ca9bc4e44f1c7604e9675031a231d9af, type: 2}
   _discoVolume: {fileID: 11400000, guid: 863252f4ad0e07f42adcc7e90beefe77, type: 2}
-  _sceneVolumeComponent: {fileID: 0}
+  _sceneVolume: {fileID: 0}
+  _floorAnimator: {fileID: 0}
   _savedCatsTextMesh: {fileID: 2515170549715499041}
   OnChaosChanged:
     m_PersistentCalls:
@@ -91,7 +92,7 @@ MonoBehaviour:
         m_CallState: 2
   _catPrefab: {fileID: 162705000832026894, guid: fd54bc735ee163348a4f5ce02c2b93b0,
     type: 3}
-  _timeSpawn: 5
+  _timeSpawn: 15
   _catSkinList:
   - {fileID: 2100000, guid: 873b8dad2c1b8b24288951dd88b1a656, type: 2}
   - {fileID: 2100000, guid: 0d88ce2a367aeed4782f890ef563f182, type: 2}
