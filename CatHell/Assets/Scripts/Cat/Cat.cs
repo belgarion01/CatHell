@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
+public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
 {
+    [SerializeField] private float _hugMaxMutationDecrease = 5f;
     
     public float Speed;
     public float AngularSpeed;
@@ -17,6 +18,9 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
     public float mutationShootFailure;
     public UnityEvent ShootSuccessEvent;
     public UnityEvent ShootFailureEvent;
+    public UnityEvent OnHug;
+
+    private float _lastHugTime = -10f;
     // Start is called before the first frame update
 
     public void OnValidate()
@@ -80,5 +84,14 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable
             Mutation.CurrentMutation += mutationShootFailure;
             ShootFailureEvent?.Invoke();
         }
+    }
+
+    public void Hug(GameObject huger)
+    {
+        _lastHugTime = Time.time;
+        float decreaseMutation = Mathf.Lerp(_hugMaxMutationDecrease, 0,
+            Mathf.InverseLerp(_lastHugTime, _lastHugTime + 5f, Time.time - _lastHugTime));
+        Mutation.AddMutation(-decreaseMutation);
+        OnHug?.Invoke();
     }
 }
