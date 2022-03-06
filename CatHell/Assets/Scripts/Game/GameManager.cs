@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private VolumeProfile _defaultVolume;
     [SerializeField] private VolumeProfile _discoVolume;
     [SerializeField] private Volume _sceneVolume;
+    [SerializeField] private Animator _floorAnimator;
     [SerializeField] private TextMeshProUGUI _savedCatsTextMesh;
     private List<Cat> _catsInHouse = new List<Cat>();
     public List<Cat> CatsInHouse => _catsInHouse;
@@ -198,6 +199,7 @@ public bool InDisco;
         _audioSource.Play();
         _discoFloor.material.SetInt("_Disconight", enable ? 0 : 1);
         _sceneVolume.profile = enable ? _discoVolume : _defaultVolume;
+        _floorAnimator.SetBool("Disco", enable);
         OnDiscoChanged?.Invoke(enable);
     }
 

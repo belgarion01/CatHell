@@ -5463,14 +5463,44 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
         type: 3}
+      propertyPath: _floorAnimator
+      value: 
+      objectReference: {fileID: 995396530}
+    - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
+        type: 3}
       propertyPath: _sceneVolumeComponent
       value: 
       objectReference: {fileID: 1792497052}
     - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
         type: 3}
+      propertyPath: OnDiscoChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
+        type: 3}
+      propertyPath: OnDiscoChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
+        type: 3}
       propertyPath: OnDiscoChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 787763264}
+    - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
+        type: 3}
+      propertyPath: OnDiscoChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 995396525}
+    - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
+        type: 3}
+      propertyPath: OnDiscoChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5193979230233050608, guid: 4a28db42c506ec0499510f477ac6b03b,
+        type: 3}
+      propertyPath: OnDiscoChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5193979230233050609, guid: 4a28db42c506ec0499510f477ac6b03b,
         type: 3}
       propertyPath: m_RootOrder
@@ -6363,6 +6393,7 @@ GameObject:
   - component: {fileID: 995396528}
   - component: {fileID: 995396527}
   - component: {fileID: 995396526}
+  - component: {fileID: 995396530}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -6449,6 +6480,26 @@ Transform:
   m_Father: {fileID: 736054489}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &995396530
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995396525}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8ac20a5b060a1e840a4b68911673ddb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1008645764
 PrefabInstance:
   m_ObjectHideFlags: 0
