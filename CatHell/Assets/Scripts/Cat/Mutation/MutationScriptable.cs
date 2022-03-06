@@ -9,7 +9,10 @@ using UnityEngine;
 
     public virtual void Mutate(Cat cat)
     {
+    
         cat.SkinnedMeshRenderer.sharedMesh = mutateMesh;
+        if(MutateAnimatorController != null)
         cat.Animator.runtimeAnimatorController = MutateAnimatorController;
+        cat.Machine.SetState(StateCatEnum.Idle);
     }
 }

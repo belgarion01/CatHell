@@ -1,8 +1,10 @@
 
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class MutationCat : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class MutationCat : MonoBehaviour
     [SerializeField] float _maxMutation;
     private float _currentMutation;
     public float MutationPercentage => Mathf.InverseLerp(0f, _maxMutation, _currentMutation);
-
+    
     [SerializeField] private float _mutatationChaosFactor;
     public float CurrentMutation
     {
@@ -34,6 +36,7 @@ public class MutationCat : MonoBehaviour
             if (_currentMutation == _maxMutation)
             {
                 int rand = Random.Range(0, MutationScriptableList.Length);
+                Debug.Log(_cat);
               MutationScriptableList[rand].Mutate(_cat);
               IsMutated = true;
             }
@@ -43,6 +46,11 @@ public class MutationCat : MonoBehaviour
                 OnMutationChanged?.Invoke(MutationPercentage);
             }
         }
+    }
+
+    public void Awake()
+    {
+        _cat = GetComponent<Cat>();
     }
 
     public void AddMutation(float amount) => CurrentMutation += amount;

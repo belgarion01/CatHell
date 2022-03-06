@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46d4c42339f10a84ea53766af18d2a9d, type: 3}
   m_Name: SpeedMutation
   m_EditorClassIdentifier: 
-  mutateMesh: {fileID: 0}
+  mutateMesh: {fileID: -8670151273213183110, guid: 9a105e6098444154ba73b9a56717c49b,
+    type: 3}
   MutateAnimatorController: {fileID: 0}
-  Speed: 0
-  AngularSpeed: 0
+  Speed: 7
+  AngularSpeed: 240

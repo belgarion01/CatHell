@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8701c4fc2852043b74f99257232bc6, type: 3}
   m_Name: FurMutation
   m_EditorClassIdentifier: 
-  mutateMesh: {fileID: 0}
+  mutateMesh: {fileID: -8670151273213183110, guid: 46b6464d83ecf1a42bdf8fa2c46924e9,
+    type: 3}
   MutateAnimatorController: {fileID: 0}
-  TimeBetweenGeneration: 0
+  TimeBetweenGeneration: 2

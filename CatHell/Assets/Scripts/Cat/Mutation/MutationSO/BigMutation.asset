@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ee594af4170774bb9f1c004f1cbb47, type: 3}
   m_Name: BigMutation
   m_EditorClassIdentifier: 
-  mutateMesh: {fileID: 0}
+  mutateMesh: {fileID: -8670151273213183110, guid: d6b90fbc7e6fbc949a3933f33db5ea1e,
+    type: 3}
   MutateAnimatorController: {fileID: 0}
-  Speed: 0
-  AngularSpeed: 0
-  Offset: {x: 0, y: 0, z: 0}
+  Speed: 1.75
+  AngularSpeed: 60
+  Offset: {x: 0, y: 0, z: 8}
