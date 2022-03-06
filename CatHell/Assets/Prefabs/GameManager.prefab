@@ -51,6 +51,7 @@ MonoBehaviour:
   _audioSource: {fileID: 6895672655149761049}
   _defaultMusic: {fileID: 8300000, guid: 31de9141027dc83488afedf26901748c, type: 3}
   _discoMusic: {fileID: 8300000, guid: 8da5757ab6520234b9e69154566a7c89, type: 3}
+  _discoFloor: {fileID: 0}
   _savedCatsTextMesh: {fileID: 2515170549715499041}
   OnChaosChanged:
     m_PersistentCalls:

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _defaultMusic;
     [SerializeField] private AudioClip _discoMusic;
+    [SerializeField] private MeshRenderer _discoFloor;
     [SerializeField] private TextMeshProUGUI _savedCatsTextMesh;
 
     
@@ -188,6 +190,13 @@ public bool InDisco;
         InDisco = enable;
         _audioSource.clip = enable ? _discoMusic : _defaultMusic;
         _audioSource.Play();
+        _discoFloor.material.SetInt("_Disconight", enable ? 0 : 1);
         OnDiscoChanged?.Invoke(enable);
+    }
+
+    [Button]
+    public void Disco()
+    {
+        SetDiscoEnabled(true);
     }
 }
