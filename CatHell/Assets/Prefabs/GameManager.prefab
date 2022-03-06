@@ -47,11 +47,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chaosByCat: 0.5
-  _timeBetweenTicks: 0.01
+  _timeBetweenTicks: 0.5
   _audioSource: {fileID: 6895672655149761049}
   _defaultMusic: {fileID: 8300000, guid: 31de9141027dc83488afedf26901748c, type: 3}
   _discoMusic: {fileID: 8300000, guid: 8da5757ab6520234b9e69154566a7c89, type: 3}
   _discoFloor: {fileID: 0}
+  _defaultVolume: {fileID: 11400000, guid: ca9bc4e44f1c7604e9675031a231d9af, type: 2}
+  _discoVolume: {fileID: 11400000, guid: 863252f4ad0e07f42adcc7e90beefe77, type: 2}
+  _sceneVolumeComponent: {fileID: 0}
   _savedCatsTextMesh: {fileID: 2515170549715499041}
   OnChaosChanged:
     m_PersistentCalls:
@@ -73,7 +76,19 @@ MonoBehaviour:
         m_CallState: 2
   OnDiscoChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _catPrefab: {fileID: 162705000832026894, guid: fd54bc735ee163348a4f5ce02c2b93b0,
     type: 3}
   _timeSpawn: 5

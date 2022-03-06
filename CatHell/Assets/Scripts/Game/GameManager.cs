@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip _defaultMusic;
     [SerializeField] private AudioClip _discoMusic;
     [SerializeField] private MeshRenderer _discoFloor;
+    [SerializeField] private VolumeProfile _defaultVolume;
+    [SerializeField] private VolumeProfile _discoVolume;
+    [SerializeField] private Volume _sceneVolume;
     [SerializeField] private TextMeshProUGUI _savedCatsTextMesh;
 
     
@@ -196,6 +200,7 @@ public bool InDisco;
         _audioSource.clip = enable ? _discoMusic : _defaultMusic;
         _audioSource.Play();
         _discoFloor.material.SetInt("_Disconight", enable ? 0 : 1);
+        _sceneVolume.profile = enable ? _discoVolume : _defaultVolume;
         OnDiscoChanged?.Invoke(enable);
     }
 

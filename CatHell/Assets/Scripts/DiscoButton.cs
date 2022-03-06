@@ -1,10 +1,13 @@
 
+using Shapes;
 using TMPro;
 using UnityEngine;
 
 public class DiscoButton : MonoBehaviour, IInteractable
 {
     private float _timerDiscoCooldown;
+    [SerializeField] float _timeDiscoCooldown;
+    [SerializeField] private Disc _discCooldown;
     public float TimerDiscoCooldown
     {
         get
@@ -16,24 +19,21 @@ public class DiscoButton : MonoBehaviour, IInteractable
             _timerDiscoCooldown = value;
             if (TimerDiscoCooldown == 0)
             {
-                
+                _discCooldown.Color = Color.magenta;
             }
           
             else if (TimerDiscoCooldown >= _timeDiscoCooldown)
             {
-                
+                _discCooldown.Color = Color.green;
             }
 
             else
             {
-                
+                _discCooldown.Color = Color.red;
             }
-           
-            
         }
     }
-    [SerializeField]
-    float _timeDiscoCooldown;
+
     
     public void Interact(GameObject user)
     {
@@ -47,7 +47,9 @@ public class DiscoButton : MonoBehaviour, IInteractable
         {
             TimerDiscoCooldown += Time.deltaTime;
         }
-        
+
+        _discCooldown.AngRadiansEnd = Mathf.Lerp(0f, Mathf.Deg2Rad * 360f, Mathf.InverseLerp(0, _timeDiscoCooldown, _timerDiscoCooldown));
+        Debug.Log(Mathf.Lerp(0f, Mathf.Deg2Rad * 360f, Mathf.InverseLerp(0, _timeDiscoCooldown, _timerDiscoCooldown)));
     }
 
     [SerializeField]
