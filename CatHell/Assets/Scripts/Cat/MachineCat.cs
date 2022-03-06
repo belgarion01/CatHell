@@ -27,7 +27,6 @@ public class MachineCat : MonoBehaviour
    private void Start()
    {
       CurrentStateCat = StateCatList[0];
-      Debug.Log("test");
    }
    private void Update()
    {

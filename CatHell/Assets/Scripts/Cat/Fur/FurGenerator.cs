@@ -7,7 +7,8 @@ public class FurGenerator : MonoBehaviour
 {
     [SerializeField] private Fur _furPrefab;
     [SerializeField] private float _timeBetweenGeneration = 4f;
-
+    [SerializeField] private Cat cat;
+    
     public float TimeBetweenGeneration
     {
         get => _timeBetweenGeneration;
@@ -17,6 +18,8 @@ public class FurGenerator : MonoBehaviour
     
     private void Update()
     {
+        if (cat.isHoldable)
+            return;
         _tickTimer += Time.deltaTime;
 
         if (_tickTimer >= _timeBetweenGeneration)

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class MutationCat : MonoBehaviour
 {
     private Cat _cat;
-    public MutationScriptable MutationScriptable;
+    public MutationScriptable[] MutationScriptableList;
     public bool IsMutated;
     [SerializeField] float _maxMutation;
     private float _currentMutation;
@@ -26,7 +26,8 @@ public class MutationCat : MonoBehaviour
                 return;
             if (_currentMutation == _maxMutation)
             {
-              MutationScriptable.Mutate(_cat);
+                int rand = Random.Range(0, MutationScriptableList.Length);
+              MutationScriptableList[rand].Mutate(_cat);
               IsMutated = true;
             }
 

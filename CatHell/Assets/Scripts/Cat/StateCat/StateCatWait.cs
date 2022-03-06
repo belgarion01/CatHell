@@ -16,6 +16,7 @@ public class StateCatWait : StateCat
     public override void StartState()
     {
         _timerWait = 0;
+        _cat.Agent.isStopped = true;
     }
 
     public override void UpdateState()

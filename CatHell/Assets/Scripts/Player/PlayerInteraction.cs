@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
@@ -52,9 +53,11 @@ public class PlayerInteraction : MonoBehaviour
        if(!holdable.isHoldable)
            return;
        _currentHoldableObject = holdable;
+       MonoBehaviour holdableMono = holdable as MonoBehaviour;
        _currentHoldableObject.OnTake(gameObject);
-       transform.SetParent(Camera.main.transform);
-       transform.localPosition = holdable.offset;
+       holdableMono.transform.SetParent(Camera.main.transform);
+       holdableMono.transform.position = Camera.main.transform.position;
+       holdableMono.transform.localPosition = holdable.offset;
    }
 
    public void DropHoldableObject(IHoldable holdable)

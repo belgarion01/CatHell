@@ -25,6 +25,7 @@ public class StateCatPatrol : StateCat
   
   public override void StartState()
   {
+      _cat.Agent.isStopped = false;
     _cat.Agent.speed = _cat.Speed*speedFactor;
         _cat.Agent.angularSpeed = _cat.AngularSpeed*angularSpeedFactor;
     _timerPatrol = 0; 
@@ -42,8 +43,10 @@ public class StateCatPatrol : StateCat
   }
  public override void UpdateState()
   {
+      
     if (Vector3.Distance(_cat.transform.position, _cat.Agent.destination)<_cat.Agent.radius)
     {
+       
       GenerateDestination();
     }
 

@@ -20,7 +20,6 @@ public class StateCatMoveToPoint :  StateCat
                 DestinationCat.instance.destinationCatClassDic[stateCatDestination.destinationCatEnum];
         }
     }
-
     [SerializeField]
     private float angularSpeedFactor;
     [SerializeField]
@@ -29,6 +28,7 @@ public class StateCatMoveToPoint :  StateCat
     public override void StartState()
     {
         NavMeshHit _hit;
+        _cat.Agent.isStopped = false;
         float rand = Random.Range(0, 100);
         for (int i = 0; i < _stateCatDestinationList.Count; i++)
         {
@@ -36,7 +36,6 @@ public class StateCatMoveToPoint :  StateCat
             {
                 _destination = _stateCatDestinationList[i].destination.position;
                 _stateCatDest = _stateCatDestinationList[i].stateCat;
-
             }
         }
         NavMesh.SamplePosition(_destination, out _hit, Vector3.Distance(transform.position, _destination), 1 );
@@ -44,11 +43,13 @@ public class StateCatMoveToPoint :  StateCat
            _cat.Agent.SetDestination(_destination);
         _cat.Agent.speed = _cat.Speed*speedFactor;
         _cat.Agent.angularSpeed = _cat.AngularSpeed*angularSpeedFactor;
+  
     }
 
     public override void UpdateState()
     {
-       Debug.Log(Vector3.Distance(_cat.Agent.transform.position, _destination) );
+        Debug.Log(_cat.Agent.isStopped);
+        Debug.Log(Vector3.Distance(transform.position, _destination));
         if (Vector3.Distance(transform.position, _destination) <= _cat.Agent.radius)
         {
             NextState = _stateCatDest;
