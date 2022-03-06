@@ -62,6 +62,8 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
         if(!Agent.isStopped)
         Agent.isStopped = true;
         Agent.enabled = false;
+        SickBubbleEffect.SetActive(false);
+        ScratchEffect.SetActive(false);
         transform.LookAt(user.transform, Vector3.up);
         Machine.enabled = false; 
         AnimSetHeld(true);
@@ -80,7 +82,7 @@ public class Cat : MonoBehaviour, IHoldable, IInteractable, IShootable, IHugable
 
     public void Interact(GameObject user)
     {
-        if(IsHoldableCat)
+        if(IsHoldableCat && Machine.CurrentStateCat.StateCatEnum != StateCatEnum.Sick)
        user.GetComponent<PlayerInteraction>().TakeHoldableObject(this);
     }
 

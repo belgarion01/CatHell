@@ -15,7 +15,7 @@ public class MutationCat : MonoBehaviour
     private float _currentMutation;
     public float MutationPercentage => Mathf.InverseLerp(0f, _maxMutation, _currentMutation);
     
-    [SerializeField] private float _mutatationChaosFactor;
+    [SerializeField] private float _mutationChaosFactor;
     public float CurrentMutation
     {
         get
@@ -29,7 +29,7 @@ public class MutationCat : MonoBehaviour
             if (IsMutated)
             {
                 _currentMutation = value;
-               GameManager.Instance.SubstractChaos(_mutatationChaosFactor*(oldMutation-_currentMutation));
+               GameManager.Instance.SubstractChaos(_mutationChaosFactor*(oldMutation-_currentMutation));
                return;
             }
                _currentMutation = Mathf.Clamp(value,0, _maxMutation);
