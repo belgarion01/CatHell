@@ -106,7 +106,10 @@ private void Start()
     }
     
    private bool CheckSpawnCat()
-    {
+   {
+       if (IsGamePaused)
+           return false;
+        
         if (_timeSpawn > _timerSpawn)
         {
             _timerSpawn += Time.deltaTime;
@@ -118,6 +121,8 @@ private void Start()
    
   private void SpawnCat()
     {
+        if (IsGamePaused)
+            return;
         int rand = Random.Range(0, DestinationCat.instance.spawnerCatList.Length);
         int rand2 = Random.Range(0, _catSkinList.Count);
         
