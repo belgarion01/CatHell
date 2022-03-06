@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     
     private List<Cat> _catsInHouse = new List<Cat>();
+    public List<Cat> CatsInHouse => _catsInHouse;
+    public int MutatedCatsInHouse => _catsInHouse.Count(x => x.Mutation.IsMutated);
 
     private float _chaosGauge;
     private float _maxChaosGauge = 100f;
