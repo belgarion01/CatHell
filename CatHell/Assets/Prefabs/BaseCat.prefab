@@ -131,7 +131,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39d4ec55771d7554b872bab55fcb7f9e, type: 2}
   - {fileID: 11400000, guid: 8be8596b7cddc3343867a27428932965, type: 2}
   - {fileID: 11400000, guid: 7653428a3cf94ce4785d36f13d408ea1, type: 2}
-  - {fileID: 11400000, guid: f5c25b222088619469e328c1f3b51013, type: 2}
   IsMutated: 0
   _maxMutation: 100
   _mutatationChaosFactor: 0
