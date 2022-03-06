@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,10 +9,12 @@ public class ToolbarBox : MonoBehaviour
     [SerializeField] private Image _toolImage;
     [SerializeField] private Image _backgroundImage;
     [SerializeField] private Image _selectedBorder;
+    [SerializeField] private TextMeshProUGUI _toolNameTextMesh;
     
     public void Init(Tool tool, int index)
     {
         _toolImage.sprite = tool.Sprite;
+        _toolNameTextMesh.text = tool.Name;
         switch (index)
         {
             case 0:
@@ -28,7 +31,7 @@ public class ToolbarBox : MonoBehaviour
     
     public void SetSelected(bool selected)
     {
-        // _backgroundImage.color = selected ? Color.red : Color.white;
         _selectedBorder.gameObject.SetActive(selected);
+        _toolNameTextMesh.gameObject.SetActive(selected);
     }
 }
